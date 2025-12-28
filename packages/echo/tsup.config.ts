@@ -1,0 +1,13 @@
+import { defineConfig } from 'tsup';
+
+export default defineConfig({
+  entry: ['src/index.ts'],
+  format: ['esm'],
+  dts: true,
+  sourcemap: true,
+  clean: true,
+  target: 'es2022',
+  treeshake: true,
+  minify: true,
+  external: ['laravel-echo', 'pusher-js', 'socket.io-client'],
+});

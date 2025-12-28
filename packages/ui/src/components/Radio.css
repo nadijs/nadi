@@ -1,0 +1,73 @@
+/** @jsxImportSource @nadi/core */
+/**
+ * Radio Component CSS
+ */
+
+[data-nadi-radio-group] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nadi-space-2);
+}
+
+[data-nadi-radio-group][data-direction="horizontal"] {
+  flex-direction: row;
+}
+
+[data-nadi-radio] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nadi-space-2);
+  cursor: pointer;
+  user-select: none;
+}
+
+[data-nadi-radio][data-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.nadi-radio-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.nadi-radio-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--nadi-color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--nadi-duration-fast);
+}
+
+.nadi-radio-input:checked + .nadi-radio-circle {
+  border-color: var(--nadi-color-primary-600);
+  background: var(--nadi-color-primary-50);
+}
+
+.nadi-radio-input:focus-visible + .nadi-radio-circle {
+  outline: 2px solid var(--nadi-color-border-focus);
+  outline-offset: 2px;
+}
+
+.nadi-radio-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--nadi-color-primary-600);
+  transform: scale(0);
+  transition: transform var(--nadi-duration-fast) var(--nadi-easing-spring);
+}
+
+.nadi-radio-input:checked + .nadi-radio-circle .nadi-radio-dot {
+  transform: scale(1);
+}
+
+.nadi-radio-label {
+  font-size: var(--nadi-font-size-base);
+  color: var(--nadi-color-text-primary);
+}

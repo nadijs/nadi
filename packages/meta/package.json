@@ -1,0 +1,42 @@
+{
+  "name": "@nadi/meta",
+  "version": "0.2.0",
+  "description": "Head and meta tag management for Nadi with SSR support",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "nadi",
+    "meta",
+    "head",
+    "seo",
+    "ssr"
+  ],
+  "author": "Nadi Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "@nadi/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@nadi/core": "workspace:*",
+    "typescript": "^5.3.3",
+    "tsup": "^8.0.0",
+    "vitest": "^1.0.0"
+  }
+}

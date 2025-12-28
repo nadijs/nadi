@@ -1,0 +1,102 @@
+/** @jsxImportSource @nadi/core */
+/**
+ * Steps Component CSS
+ */
+
+[data-nadi-steps] {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+[data-nadi-steps][data-direction="vertical"] {
+  flex-direction: column;
+}
+
+.nadi-step {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--nadi-space-3);
+}
+
+[data-nadi-steps][data-direction="vertical"] .nadi-step {
+  padding-bottom: var(--nadi-space-6);
+}
+
+.nadi-step-indicator {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--nadi-font-weight-medium);
+  background: var(--nadi-color-gray-200);
+  color: var(--nadi-color-text-secondary);
+  transition: all var(--nadi-duration-normal);
+  flex-shrink: 0;
+}
+
+.nadi-step[data-status="completed"] .nadi-step-indicator {
+  background: var(--nadi-color-primary-600);
+  color: white;
+}
+
+.nadi-step[data-status="active"] .nadi-step-indicator {
+  background: var(--nadi-color-primary-100);
+  color: var(--nadi-color-primary-700);
+  border: 2px solid var(--nadi-color-primary-600);
+}
+
+.nadi-step[data-status="error"] .nadi-step-indicator {
+  background: var(--nadi-color-error);
+  color: white;
+}
+
+.nadi-step-content {
+  flex: 1;
+  padding-bottom: var(--nadi-space-1);
+}
+
+.nadi-step-title {
+  font-weight: var(--nadi-font-weight-medium);
+  color: var(--nadi-color-text-primary);
+  margin-bottom: var(--nadi-space-1);
+}
+
+.nadi-step-description {
+  font-size: var(--nadi-font-size-sm);
+  color: var(--nadi-color-text-secondary);
+}
+
+.nadi-step-connector {
+  position: absolute;
+  background: var(--nadi-color-border);
+  transition: background var(--nadi-duration-normal);
+}
+
+[data-nadi-steps][data-direction="horizontal"] .nadi-step-connector {
+  left: 50%;
+  right: -50%;
+  top: 16px;
+  height: 2px;
+}
+
+[data-nadi-steps][data-direction="vertical"] .nadi-step-connector {
+  left: 16px;
+  top: 32px;
+  bottom: 0;
+  width: 2px;
+}
+
+.nadi-step[data-status="completed"] .nadi-step-connector {
+  background: var(--nadi-color-primary-600);
+}
+
+.nadi-step:last-child .nadi-step-connector {
+  display: none;
+}

@@ -1,0 +1,61 @@
+/** @jsxImportSource @nadi/core */
+/**
+ * Avatar Component CSS
+ */
+
+[data-nadi-avatar] {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--nadi-radius-full);
+  overflow: hidden;
+  background: var(--nadi-color-gray-200);
+  color: var(--nadi-color-gray-700);
+  font-weight: var(--nadi-font-weight-medium);
+  user-select: none;
+}
+
+[data-nadi-avatar][data-size="xs"] {
+  width: 24px;
+  height: 24px;
+  font-size: 0.625rem;
+}
+
+[data-nadi-avatar][data-size="sm"] {
+  width: 32px;
+  height: 32px;
+  font-size: var(--nadi-font-size-xs);
+}
+
+[data-nadi-avatar][data-size="md"] {
+  width: 40px;
+  height: 40px;
+  font-size: var(--nadi-font-size-sm);
+}
+
+[data-nadi-avatar][data-size="lg"] {
+  width: 56px;
+  height: 56px;
+  font-size: var(--nadi-font-size-lg);
+}
+
+[data-nadi-avatar][data-size="xl"] {
+  width: 80px;
+  height: 80px;
+  font-size: var(--nadi-font-size-2xl);
+}
+
+.nadi-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nadi-avatar-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 2px solid var(--nadi-color-background);
+  border-radius: var(--nadi-radius-full);
+}

@@ -1,0 +1,39 @@
+{
+  "name": "@nadi/vite-plugin",
+  "version": "0.1.0",
+  "description": "Vite plugin for Nadi framework",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "nadi",
+    "vite",
+    "plugin"
+  ],
+  "author": "Nadi Team",
+  "license": "MIT",
+  "dependencies": {
+    "@nadi/compiler": "workspace:*",
+    "vite": "^5.0.11"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}

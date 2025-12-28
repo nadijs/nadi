@@ -1,0 +1,117 @@
+/**
+ * Toast Component CSS
+ */
+
+[data-nadi-toast-container] {
+  position: fixed;
+  z-index: var(--nadi-z-toast);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nadi-space-2);
+  padding: var(--nadi-space-4);
+}
+
+[data-nadi-toast-container][data-position="top-left"] {
+  top: 0;
+  left: 0;
+}
+
+[data-nadi-toast-container][data-position="top-center"] {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+[data-nadi-toast-container][data-position="top-right"] {
+  top: 0;
+  right: 0;
+}
+
+[data-nadi-toast-container][data-position="bottom-left"] {
+  bottom: 0;
+  left: 0;
+}
+
+[data-nadi-toast-container][data-position="bottom-center"] {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+[data-nadi-toast-container][data-position="bottom-right"] {
+  bottom: 0;
+  right: 0;
+}
+
+[data-nadi-toast] {
+  pointer-events: auto;
+  min-width: 300px;
+  max-width: 500px;
+  padding: var(--nadi-space-4);
+  background: var(--nadi-color-surface-elevated);
+  border-radius: var(--nadi-radius-md);
+  box-shadow: var(--nadi-shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--nadi-space-3);
+  animation: nadi-slide-in-up var(--nadi-duration-base) var(--nadi-easing-spring);
+  border-left: 4px solid;
+}
+
+[data-nadi-toast][data-variant="success"] {
+  border-left-color: var(--nadi-color-success);
+}
+
+[data-nadi-toast][data-variant="error"] {
+  border-left-color: var(--nadi-color-error);
+}
+
+[data-nadi-toast][data-variant="warning"] {
+  border-left-color: var(--nadi-color-warning);
+}
+
+[data-nadi-toast][data-variant="info"] {
+  border-left-color: var(--nadi-color-info);
+}
+
+[data-nadi-toast][data-closing="true"] {
+  animation: nadi-fade-out var(--nadi-duration-fast) var(--nadi-easing-default);
+}
+
+.nadi-toast-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.nadi-toast-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nadi-space-1);
+}
+
+.nadi-toast-title {
+  font-weight: var(--nadi-font-weight-semibold);
+  font-size: var(--nadi-font-size-sm);
+  color: var(--nadi-color-text-primary);
+}
+
+.nadi-toast-message {
+  font-size: var(--nadi-font-size-sm);
+  color: var(--nadi-color-text-secondary);
+}
+
+.nadi-toast-close {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  color: var(--nadi-color-text-tertiary);
+  transition: color var(--nadi-duration-fast);
+}
+
+.nadi-toast-close:hover {
+  color: var(--nadi-color-text-primary);
+}

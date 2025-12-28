@@ -1,0 +1,47 @@
+{
+  "name": "@nadi/echo",
+  "version": "0.2.0",
+  "description": "Laravel Echo integration for Nadi with reactive signals",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "nadi",
+    "laravel-echo",
+    "websockets",
+    "real-time",
+    "pusher"
+  ],
+  "author": "Nadi Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "@nadi/core": "workspace:*",
+    "laravel-echo": "^1.16.0"
+  },
+  "devDependencies": {
+    "@nadi/core": "workspace:*",
+    "@types/node": "^20.10.0",
+    "laravel-echo": "^1.16.0",
+    "pusher-js": "^8.4.0-rc2",
+    "socket.io-client": "^4.6.0",
+    "typescript": "^5.3.3",
+    "tsup": "^8.0.0",
+    "vitest": "^1.0.0"
+  }
+}

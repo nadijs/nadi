@@ -1,0 +1,52 @@
+{
+  "name": "@nadi/adapter-laravel",
+  "version": "0.2.0",
+  "description": "Laravel adapter for Nadi framework with SSR support",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "import": "./dist/client.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src/**/*.php",
+    "config",
+    "resources"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "keywords": [
+    "nadi",
+    "laravel",
+    "ssr",
+    "adapter"
+  ],
+  "author": "Nadi Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "@nadi/core": "workspace:*",
+    "@nadi/compiler": "workspace:*"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@nadi/core": "workspace:*",
+    "@nadi/compiler": "workspace:*",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3",
+    "tsup": "^8.0.0"
+  }
+}

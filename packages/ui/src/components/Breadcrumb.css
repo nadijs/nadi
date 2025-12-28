@@ -1,0 +1,40 @@
+/** @jsxImportSource @nadi/core */
+/**
+ * Breadcrumb Component CSS
+ */
+
+[data-nadi-breadcrumb] {
+  display: flex;
+  align-items: center;
+  gap: var(--nadi-space-2);
+  font-size: var(--nadi-font-size-sm);
+  color: var(--nadi-color-text-secondary);
+  flex-wrap: wrap;
+}
+
+.nadi-breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: var(--nadi-space-2);
+}
+
+.nadi-breadcrumb-link {
+  color: var(--nadi-color-text-secondary);
+  text-decoration: none;
+  transition: color var(--nadi-duration-fast);
+  cursor: pointer;
+}
+
+.nadi-breadcrumb-link:hover {
+  color: var(--nadi-color-primary-600);
+}
+
+.nadi-breadcrumb-current {
+  color: var(--nadi-color-text-primary);
+  font-weight: var(--nadi-font-weight-medium);
+}
+
+.nadi-breadcrumb-separator {
+  color: var(--nadi-color-text-tertiary);
+  user-select: none;
+}

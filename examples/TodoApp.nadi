@@ -1,0 +1,209 @@
+<template>
+  <div class="todo-app">
+    <h1>Todo List</h1>
+
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={newTodo()}
+        onInput={(e) => setNewTodo(e.target.value)}
+        placeholder="What needs to be done?"
+      />
+      <button type="submit">Add</button>
+    </form>
+
+    <ul class="todo-list">
+      <For each={todos()}>
+        {(todo, index) => (
+          <li class={todo.completed ? 'completed' : ''}>
+            <input
+              type="checkbox"
+              checked={todo.completed}
+              onChange={() => toggleTodo(index())}
+            />
+            <span>{todo.text}</span>
+            <button
+              class="delete"
+              onClick={() => deleteTodo(index())}
+            >
+              ×
+            </button>
+          </li>
+        )}
+      </For>
+    </ul>
+
+    <div class="stats">
+      <p>{remaining()} items left</p>
+      <button onClick={clearCompleted}>Clear completed</button>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { signal, computed } from '@nadi/core';
+import { For } from '@nadi/core';
+
+interface Todo {
+  id: number;
+  text: string;
+  completed: boolean;
+}
+
+export default function TodoApp() {
+  const [todos, setTodos] = signal<Todo[]>([]);
+  const [newTodo, setNewTodo] = signal('');
+  let nextId = 0;
+
+  const remaining = computed(() =>
+    todos().filter(t => !t.completed).length
+  );
+
+  const handleSubmit = (e: Event) => {
+    e.preventDefault();
+    if (newTodo().trim()) {
+      setTodos([
+        ...todos(),
+        { id: nextId++, text: newTodo(), completed: false }
+      ]);
+      setNewTodo('');
+    }
+  };
+
+  const toggleTodo = (index: number) => {
+    const updated = [...todos()];
+    updated[index]!.completed = !updated[index]!.completed;
+    setTodos(updated);
+  };
+
+  const deleteTodo = (index: number) => {
+    setTodos(todos().filter((_, i) => i !== index));
+  };
+
+  const clearCompleted = () => {
+    setTodos(todos().filter(t => !t.completed));
+  };
+
+  return {
+    todos,
+    newTodo,
+    setNewTodo,
+    remaining,
+    handleSubmit,
+    toggleTodo,
+    deleteTodo,
+    clearCompleted,
+  };
+}
+</script>
+
+<style scoped>
+.todo-app {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #42b883;
+}
+
+button {
+  background: #42b883;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #359268;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 0.75rem;
+}
+
+.todo-list li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-list input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+.todo-list span {
+  flex: 1;
+}
+
+.delete {
+  background: #dc3545;
+  padding: 0.25rem 0.75rem;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.delete:hover {
+  background: #c82333;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.stats p {
+  margin: 0;
+  color: #666;
+}
+
+.stats button {
+  background: #6c757d;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.stats button:hover {
+  background: #5a6268;
+}
+</style>

@@ -1,0 +1,61 @@
+/** @jsxImportSource @nadi/core */
+/**
+ * Pagination Component CSS
+ */
+
+[data-nadi-pagination] {
+  display: flex;
+  align-items: center;
+  gap: var(--nadi-space-1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nadi-pagination-item {
+  display: inline-flex;
+}
+
+.nadi-pagination-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 var(--nadi-space-2);
+  font-size: var(--nadi-font-size-sm);
+  font-weight: var(--nadi-font-weight-medium);
+  color: var(--nadi-color-text-primary);
+  background: transparent;
+  border: 1px solid var(--nadi-color-border);
+  border-radius: var(--nadi-radius-base);
+  cursor: pointer;
+  transition: all var(--nadi-duration-fast);
+}
+
+.nadi-pagination-button:hover:not(:disabled) {
+  background: var(--nadi-color-gray-100);
+  border-color: var(--nadi-color-primary-600);
+  color: var(--nadi-color-primary-600);
+}
+
+.nadi-pagination-button[data-active="true"] {
+  background: var(--nadi-color-primary-600);
+  border-color: var(--nadi-color-primary-600);
+  color: white;
+}
+
+.nadi-pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nadi-pagination-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  color: var(--nadi-color-text-tertiary);
+  user-select: none;
+}

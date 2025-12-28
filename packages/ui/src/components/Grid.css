@@ -1,0 +1,60 @@
+/**
+ * Grid Component CSS
+ */
+
+[data-nadi-grid] {
+  display: grid;
+  gap: var(--nadi-space-4);
+}
+
+/* Responsive column presets */
+[data-nadi-grid][data-cols="1"] { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+[data-nadi-grid][data-cols="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+[data-nadi-grid][data-cols="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+[data-nadi-grid][data-cols="4"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+[data-nadi-grid][data-cols="5"] { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+[data-nadi-grid][data-cols="6"] { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+[data-nadi-grid][data-cols="12"] { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+
+/* Gap sizes */
+[data-nadi-grid][data-gap="xs"] { gap: var(--nadi-space-1); }
+[data-nadi-grid][data-gap="sm"] { gap: var(--nadi-space-2); }
+[data-nadi-grid][data-gap="md"] { gap: var(--nadi-space-4); }
+[data-nadi-grid][data-gap="lg"] { gap: var(--nadi-space-6); }
+[data-nadi-grid][data-gap="xl"] { gap: var(--nadi-space-8); }
+
+/* Responsive breakpoints */
+@media (min-width: 640px) {
+  [data-nadi-grid][data-cols-sm="1"] { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-sm="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-sm="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-sm="4"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-sm="6"] { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+@media (min-width: 768px) {
+  [data-nadi-grid][data-cols-md="1"] { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-md="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-md="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-md="4"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-md="6"] { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-md="12"] { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  [data-nadi-grid][data-cols-lg="1"] { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-lg="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-lg="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-lg="4"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-lg="6"] { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-lg="12"] { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1280px) {
+  [data-nadi-grid][data-cols-xl="1"] { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-xl="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-xl="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-xl="4"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-xl="6"] { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  [data-nadi-grid][data-cols-xl="12"] { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+}

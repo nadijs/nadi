@@ -1,0 +1,64 @@
+/**
+ * Card Component CSS
+ */
+
+[data-nadi-card] {
+  background: var(--nadi-color-surface-elevated);
+  border-radius: var(--nadi-radius-lg);
+  box-shadow: var(--nadi-shadow-sm);
+  transition: all var(--nadi-duration-base) var(--nadi-easing-default);
+  overflow: hidden;
+}
+
+[data-nadi-card][data-hoverable="true"] {
+  cursor: pointer;
+}
+
+[data-nadi-card][data-hoverable="true"]:hover {
+  box-shadow: var(--nadi-shadow-md);
+  transform: translateY(-2px);
+}
+
+[data-nadi-card][data-variant="outlined"] {
+  background: var(--nadi-color-background);
+  border: 1px solid var(--nadi-color-border);
+  box-shadow: none;
+}
+
+[data-nadi-card][data-variant="flat"] {
+  background: var(--nadi-color-surface);
+  box-shadow: none;
+}
+
+/* Padding variants */
+[data-nadi-card][data-padding="none"] {
+  padding: 0;
+}
+
+[data-nadi-card][data-padding="sm"] {
+  padding: var(--nadi-space-3);
+}
+
+[data-nadi-card][data-padding="md"] {
+  padding: var(--nadi-space-4);
+}
+
+[data-nadi-card][data-padding="lg"] {
+  padding: var(--nadi-space-6);
+}
+
+/* Card sections */
+.nadi-card-header {
+  padding: var(--nadi-space-4);
+  border-bottom: 1px solid var(--nadi-color-border);
+}
+
+.nadi-card-body {
+  padding: var(--nadi-space-4);
+}
+
+.nadi-card-footer {
+  padding: var(--nadi-space-4);
+  border-top: 1px solid var(--nadi-color-border);
+  background: var(--nadi-color-surface);
+}

@@ -1,0 +1,22 @@
+{
+  "name": "nadi-devtools",
+  "version": "0.2.0",
+  "description": "DevTools extension for Nadi framework",
+  "private": true,
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "@types/chrome": "^0.0.258"
+  },
+  "keywords": [
+    "nadi",
+    "devtools",
+    "chrome-extension",
+    "firefox-addon"
+  ],
+  "author": "Nadi Team",
+  "license": "MIT"
+}

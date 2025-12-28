@@ -1,0 +1,83 @@
+/** @jsxImportSource @nadi/core */
+/**
+ * Timeline Component CSS
+ */
+
+[data-nadi-timeline] {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nadi-timeline-item {
+  position: relative;
+  padding-left: var(--nadi-space-8);
+  padding-bottom: var(--nadi-space-6);
+}
+
+.nadi-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.nadi-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 24px;
+  bottom: 0;
+  width: 2px;
+  background: var(--nadi-color-border);
+}
+
+.nadi-timeline-item:last-child::before {
+  display: none;
+}
+
+.nadi-timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--nadi-color-primary-600);
+  z-index: 1;
+}
+
+[data-nadi-timeline][data-variant="primary"] .nadi-timeline-dot {
+  border-color: var(--nadi-color-primary-600);
+  background: var(--nadi-color-primary-600);
+}
+
+[data-nadi-timeline][data-variant="success"] .nadi-timeline-dot {
+  border-color: var(--nadi-color-success);
+  background: var(--nadi-color-success);
+}
+
+[data-nadi-timeline][data-variant="error"] .nadi-timeline-dot {
+  border-color: var(--nadi-color-error);
+  background: var(--nadi-color-error);
+}
+
+.nadi-timeline-content {
+  padding-top: 2px;
+}
+
+.nadi-timeline-title {
+  font-weight: var(--nadi-font-weight-medium);
+  color: var(--nadi-color-text-primary);
+  margin-bottom: var(--nadi-space-1);
+}
+
+.nadi-timeline-description {
+  font-size: var(--nadi-font-size-sm);
+  color: var(--nadi-color-text-secondary);
+  margin-bottom: var(--nadi-space-1);
+}
+
+.nadi-timeline-time {
+  font-size: var(--nadi-font-size-xs);
+  color: var(--nadi-color-text-tertiary);
+}

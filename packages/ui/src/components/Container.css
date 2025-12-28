@@ -1,0 +1,27 @@
+/**
+ * Container Component CSS
+ */
+
+[data-nadi-container] {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--nadi-space-4);
+  padding-right: var(--nadi-space-4);
+}
+
+/* Size variants */
+[data-nadi-container][data-size="sm"] { max-width: 640px; }
+[data-nadi-container][data-size="md"] { max-width: 768px; }
+[data-nadi-container][data-size="lg"] { max-width: 1024px; }
+[data-nadi-container][data-size="xl"] { max-width: 1280px; }
+[data-nadi-container][data-size="2xl"] { max-width: 1536px; }
+[data-nadi-container][data-size="full"] { max-width: 100%; }
+
+/* Centered content */
+[data-nadi-container][data-centered="true"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

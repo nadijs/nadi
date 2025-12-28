@@ -1,0 +1,31 @@
+{
+  "name": "@nadi/adapter-django",
+  "version": "0.2.0",
+  "description": "Django adapter for Nadi framework with SSR support",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/**/*.py"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [
+    "nadi",
+    "django",
+    "python",
+    "ssr"
+  ],
+  "author": "Nadi Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "@nadi/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@nadi/core": "workspace:*",
+    "typescript": "^5.3.3",
+    "tsup": "^8.0.0"
+  }
+}

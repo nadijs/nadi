@@ -1,0 +1,52 @@
+{
+  "name": "@nadi/core",
+  "version": "0.2.0",
+  "description": "Nadi core signals runtime with SSR support",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./jsx-runtime": {
+      "types": "./dist/jsx-runtime.d.ts",
+      "import": "./dist/jsx-runtime.js"
+    },
+    "./jsx-dev-runtime": {
+      "types": "./dist/jsx-dev-runtime.d.ts",
+      "import": "./dist/jsx-dev-runtime.js"
+    },
+    "./jsx-ssr-runtime": {
+      "types": "./dist/jsx-ssr-runtime.d.ts",
+      "import": "./dist/jsx-ssr-runtime.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "nadi",
+    "reactive",
+    "signals",
+    "framework",
+    "laravel"
+  ],
+  "author": "Nadi Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.1"
+  }
+}

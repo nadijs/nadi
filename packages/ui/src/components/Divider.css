@@ -1,0 +1,42 @@
+/** @jsxImportSource @nadi/core */
+/**
+ * Divider Component CSS
+ */
+
+[data-nadi-divider] {
+  border: none;
+  border-top: 1px solid var(--nadi-color-border);
+  margin: var(--nadi-space-4) 0;
+}
+
+[data-nadi-divider][data-orientation="vertical"] {
+  border-top: none;
+  border-left: 1px solid var(--nadi-color-border);
+  height: auto;
+  align-self: stretch;
+  margin: 0 var(--nadi-space-4);
+}
+
+[data-nadi-divider][data-variant="dashed"] {
+  border-style: dashed;
+}
+
+[data-nadi-divider][data-variant="dotted"] {
+  border-style: dotted;
+}
+
+[data-nadi-divider-with-text] {
+  display: flex;
+  align-items: center;
+  gap: var(--nadi-space-3);
+  font-size: var(--nadi-font-size-sm);
+  color: var(--nadi-color-text-secondary);
+  margin: var(--nadi-space-4) 0;
+}
+
+[data-nadi-divider-with-text]::before,
+[data-nadi-divider-with-text]::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid var(--nadi-color-border);
+}

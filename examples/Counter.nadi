@@ -1,0 +1,78 @@
+<template>
+  <div class="counter">
+    <h1>Counter Example</h1>
+    <p>Count: {count()}</p>
+    <button onClick={() => setCount(count() + 1)}>
+      Increment
+    </button>
+    <button onClick={() => setCount(count() - 1)}>
+      Decrement
+    </button>
+    <button onClick={() => setCount(0)}>
+      Reset
+    </button>
+
+    <p class="doubled">Doubled: {doubled()}</p>
+  </div>
+</template>
+
+<script lang="ts">
+import { signal, computed } from '@nadi/core';
+
+export default function Counter() {
+  const [count, setCount] = signal(0);
+  const doubled = computed(() => count() * 2);
+
+  return {
+    count,
+    setCount,
+    doubled,
+  };
+}
+</script>
+
+<style scoped>
+.counter {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.doubled {
+  color: #42b883;
+  font-weight: bold;
+}
+
+button {
+  background: #42b883;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem 0.25rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #359268;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+</style>

@@ -1,0 +1,77 @@
+/* Custom Hero Section with Side Logo */
+.VPHome .VPHero {
+  position: relative;
+  overflow: visible;
+}
+
+/* Show and style the hero image on the left */
+.VPHome .VPHero .VPImage {
+  display: block !important;
+  opacity: 1 !important;
+}
+
+.VPHome .VPHero .VPImage img {
+  max-width: 800px !important;
+  width: 800px !important;
+}
+
+@media (max-width: 768px) {
+  .VPHome .VPHero .VPImage img {
+    max-width: 550px !important;
+    width: 550px !important;
+  }
+}
+
+.VPHome .VPHero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhance text styling */
+.VPHome .VPHero .text {
+  position: relative;
+  z-index: 2;
+}
+
+.VPHome .VPHero .tagline {
+  position: relative;
+  z-index: 2;
+}
+
+/* Button hover effects */
+.VPHome .VPHero .actions {
+  position: relative;
+  z-index: 2;
+}
+
+.VPHome .VPHero .VPButton {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.VPHome .VPHero .VPButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(96, 103, 255, 0.3);
+}
+
+.VPHome .VPHero .VPButton.brand {
+  background: linear-gradient(135deg, var(--vp-c-brand-1) 0%, var(--vp-c-brand-2) 100%);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.VPHome .VPHero .VPButton.brand::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.VPHome .VPHero .VPButton.brand:hover::before {
+  left: 100%;
+}

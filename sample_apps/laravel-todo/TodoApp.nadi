@@ -1,0 +1,400 @@
+<script lang="ts">
+import { signal, computed } from '@nadi/core';
+import { createForm } from '@nadi/forms';
+import { required, minLength } from '@nadi/forms/validators';
+import { Head, Title, Meta } from '@nadi/meta';
+
+export default function TodoApp(props: { initialTodos: Todo[] }) {
+  const [todos, setTodos] = signal<Todo[]>(props.initialTodos || []);
+  const [filter, setFilter] = signal<'all' | 'active' | 'completed'>('all');
+
+  const form = createForm({
+    initialValues: {
+      title: '',
+      description: ''
+    },
+    validationRules: {
+      title: [required(), minLength(3)],
+      description: [required()]
+    },
+    onSubmit: async (values) => {
+      const response = await fetch('/api/todos', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values)
+      });
+
+      const newTodo = await response.json();
+      setTodos([...todos(), newTodo]);
+      form.reset();
+    }
+  });
+
+  const filteredTodos = computed(() => {
+    switch (filter()) {
+      case 'active':
+        return todos().filter(t => !t.completed);
+      case 'completed':
+        return todos().filter(t => t.completed);
+      default:
+        return todos();
+    }
+  });
+
+  const toggleTodo = async (id: number) => {
+    const todo = todos().find(t => t.id === id);
+    if (!todo) return;
+
+    await fetch(`/api/todos/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ completed: !todo.completed })
+    });
+
+    setTodos(todos().map(t =>
+      t.id === id ? { ...t, completed: !t.completed } : t
+    ));
+  };
+
+  const deleteTodo = async (id: number) => {
+    await fetch(`/api/todos/${id}`, { method: 'DELETE' });
+    setTodos(todos().filter(t => t.id !== id));
+  };
+
+  return {
+    form,
+    todos,
+    filteredTodos,
+    filter,
+    setFilter,
+    toggleTodo,
+    deleteTodo
+  };
+}
+
+interface Todo {
+  id: number;
+  title: string;
+  description: string;
+  completed: boolean;
+  created_at: string;
+}
+</script>
+
+<template>
+  <div class="todo-app">
+    <Head>
+      <Title>Todo App - Nadi Laravel Example</Title>
+      <Meta name="description" content="A reactive todo app built with Nadi and Laravel" />
+    </Head>
+
+    <header class="header">
+      <h1>📝 Nadi Todo App</h1>
+      <p>Powered by Laravel + Nadi</p>
+    </header>
+
+    <main class="container">
+      <section class="add-todo">
+        <h2>Add New Todo</h2>
+        <form onSubmit={form.handleSubmit}>
+          <div class="form-group">
+            <label>Title</label>
+            <input
+              type="text"
+              value={form.fields.title.value()}
+              onInput={(e) => form.fields.title.setValue(e.target.value)}
+              onBlur={() => form.fields.title.setTouched(true)}
+              placeholder="Enter todo title"
+            />
+            {form.fields.title.touched() && form.fields.title.error() && (
+              <span class="error">{form.fields.title.error()}</span>
+            )}
+          </div>
+
+          <div class="form-group">
+            <label>Description</label>
+            <textarea
+              value={form.fields.description.value()}
+              onInput={(e) => form.fields.description.setValue(e.target.value)}
+              onBlur={() => form.fields.description.setTouched(true)}
+              placeholder="Enter description"
+              rows={3}
+            />
+            {form.fields.description.touched() && form.fields.description.error() && (
+              <span class="error">{form.fields.description.error()}</span>
+            )}
+          </div>
+
+          <button type="submit" disabled={form.isSubmitting() || !form.isValid()}>
+            {form.isSubmitting() ? 'Adding...' : 'Add Todo'}
+          </button>
+        </form>
+      </section>
+
+      <section class="todo-list">
+        <div class="filters">
+          <button
+            class={filter() === 'all' ? 'active' : ''}
+            onClick={() => setFilter('all')}
+          >
+            All ({todos().length})
+          </button>
+          <button
+            class={filter() === 'active' ? 'active' : ''}
+            onClick={() => setFilter('active')}
+          >
+            Active ({todos().filter(t => !t.completed).length})
+          </button>
+          <button
+            class={filter() === 'completed' ? 'active' : ''}
+            onClick={() => setFilter('completed')}
+          >
+            Completed ({todos().filter(t => t.completed).length})
+          </button>
+        </div>
+
+        <div class="todos">
+          {filteredTodos().length === 0 ? (
+            <p class="empty">No todos found</p>
+          ) : (
+            filteredTodos().map(todo => (
+              <div class={`todo-item ${todo.completed ? 'completed' : ''}`} key={todo.id}>
+                <div class="todo-checkbox">
+                  <input
+                    type="checkbox"
+                    checked={todo.completed}
+                    onChange={() => toggleTodo(todo.id)}
+                  />
+                </div>
+                <div class="todo-content">
+                  <h3>{todo.title}</h3>
+                  <p>{todo.description}</p>
+                  <span class="date">
+                    {new Date(todo.created_at).toLocaleDateString()}
+                  </span>
+                </div>
+                <button
+                  class="delete-btn"
+                  onClick={() => deleteTodo(todo.id)}
+                  title="Delete todo"
+                >
+                  🗑️
+                </button>
+              </div>
+            ))
+          )}
+        </div>
+      </section>
+    </main>
+  </div>
+</template>
+
+<style scoped>
+.todo-app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.header p {
+  margin: 10px 0 0;
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.add-todo {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.add-todo h2 {
+  margin: 0 0 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.error {
+  display: block;
+  color: #e53e3e;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background: #5568d3;
+}
+
+button[type="submit"]:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+}
+
+.todo-list {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 16px;
+}
+
+.filters button {
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.filters button:hover {
+  background: #f7fafc;
+}
+
+.filters button.active {
+  background: #667eea;
+  color: white;
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empty {
+  text-align: center;
+  color: #999;
+  padding: 40px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: #f7fafc;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.todo-item:hover {
+  background: #edf2f7;
+}
+
+.todo-item.completed {
+  opacity: 0.6;
+}
+
+.todo-item.completed .todo-content h3,
+.todo-item.completed .todo-content p {
+  text-decoration: line-through;
+}
+
+.todo-checkbox input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.todo-content {
+  flex: 1;
+}
+
+.todo-content h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: #333;
+}
+
+.todo-content p {
+  margin: 0 0 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.date {
+  font-size: 12px;
+  color: #999;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.delete-btn:hover {
+  opacity: 1;
+}
+</style>

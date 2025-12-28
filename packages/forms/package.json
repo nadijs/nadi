@@ -1,0 +1,41 @@
+{
+  "name": "@nadi/forms",
+  "version": "0.2.0",
+  "description": "Reactive form validation library for Nadi framework",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "nadi",
+    "forms",
+    "validation",
+    "reactive-forms"
+  ],
+  "author": "Nadi Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "@nadi/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@nadi/core": "workspace:*",
+    "typescript": "^5.3.3",
+    "tsup": "^8.0.0",
+    "vitest": "^1.0.0"
+  }
+}

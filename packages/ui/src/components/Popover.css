@@ -1,0 +1,86 @@
+/** @jsxImportSource @nadi/core */
+/**
+ * Popover Component CSS
+ */
+
+.nadi-popover-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.nadi-popover-content {
+  position: absolute;
+  z-index: var(--nadi-z-popover);
+  background: white;
+  border: 1px solid var(--nadi-color-border);
+  border-radius: var(--nadi-radius-lg);
+  padding: var(--nadi-space-3);
+  box-shadow: var(--nadi-shadow-lg);
+  max-width: 320px;
+  animation: nadi-fade-in var(--nadi-duration-fast) var(--nadi-easing-standard);
+}
+
+.nadi-popover-content[data-placement="top"] {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+}
+
+.nadi-popover-content[data-placement="bottom"] {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+}
+
+.nadi-popover-content[data-placement="left"] {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-8px);
+}
+
+.nadi-popover-content[data-placement="right"] {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+}
+
+.nadi-popover-arrow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border: 1px solid var(--nadi-color-border);
+  transform: rotate(45deg);
+}
+
+.nadi-popover-content[data-placement="top"] .nadi-popover-arrow {
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  border-top: none;
+  border-left: none;
+}
+
+.nadi-popover-content[data-placement="bottom"] .nadi-popover-arrow {
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  border-bottom: none;
+  border-right: none;
+}
+
+.nadi-popover-content[data-placement="left"] .nadi-popover-arrow {
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  border-left: none;
+  border-bottom: none;
+}
+
+.nadi-popover-content[data-placement="right"] .nadi-popover-arrow {
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  border-right: none;
+  border-top: none;
+}

@@ -1,0 +1,93 @@
+/**
+ * Input Component CSS
+ */
+
+[data-nadi-input-wrapper] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nadi-space-1);
+}
+
+[data-nadi-input] {
+  width: 100%;
+  font-family: var(--nadi-font-sans);
+  font-size: var(--nadi-font-size-base);
+  color: var(--nadi-color-text-primary);
+  background: var(--nadi-color-background);
+  border: 1px solid var(--nadi-color-border);
+  border-radius: var(--nadi-radius-base);
+  transition: all var(--nadi-duration-fast) var(--nadi-easing-default);
+  outline: none;
+}
+
+[data-nadi-input]::placeholder {
+  color: var(--nadi-color-text-tertiary);
+}
+
+[data-nadi-input]:hover {
+  border-color: var(--nadi-color-border-hover);
+}
+
+[data-nadi-input]:focus {
+  border-color: var(--nadi-color-border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+[data-nadi-input][data-error="true"] {
+  border-color: var(--nadi-color-error);
+}
+
+[data-nadi-input][data-error="true"]:focus {
+  border-color: var(--nadi-color-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+[data-nadi-input]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--nadi-color-surface);
+}
+
+/* Size variants */
+[data-nadi-input][data-size="sm"] {
+  height: var(--nadi-size-sm);
+  padding: 0 var(--nadi-space-3);
+  font-size: var(--nadi-font-size-sm);
+}
+
+[data-nadi-input][data-size="md"] {
+  height: var(--nadi-size-md);
+  padding: 0 var(--nadi-space-4);
+  font-size: var(--nadi-font-size-base);
+}
+
+[data-nadi-input][data-size="lg"] {
+  height: var(--nadi-size-lg);
+  padding: 0 var(--nadi-space-5);
+  font-size: var(--nadi-font-size-lg);
+}
+
+/* Label */
+.nadi-input-label {
+  font-size: var(--nadi-font-size-sm);
+  font-weight: var(--nadi-font-weight-medium);
+  color: var(--nadi-color-text-primary);
+}
+
+.nadi-input-label-required {
+  color: var(--nadi-color-error);
+  margin-left: var(--nadi-space-1);
+}
+
+/* Helper text */
+.nadi-input-helper {
+  font-size: var(--nadi-font-size-xs);
+  color: var(--nadi-color-text-secondary);
+}
+
+/* Error message */
+.nadi-input-error {
+  font-size: var(--nadi-font-size-xs);
+  color: var(--nadi-color-error);
+  animation: nadi-slide-in-up var(--nadi-duration-fast) var(--nadi-easing-default);
+}

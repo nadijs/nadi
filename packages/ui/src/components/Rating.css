@@ -1,0 +1,53 @@
+/** @jsxImportSource @nadi/core */
+/**
+ * Rating Component CSS
+ */
+
+[data-nadi-rating] {
+  display: inline-flex;
+  gap: var(--nadi-space-1);
+  align-items: center;
+}
+
+[data-nadi-rating][data-readonly="true"] {
+  pointer-events: none;
+}
+
+.nadi-rating-star {
+  cursor: pointer;
+  transition: transform var(--nadi-duration-fast);
+  color: var(--nadi-color-gray-300);
+}
+
+[data-nadi-rating]:not([data-readonly="true"]) .nadi-rating-star:hover {
+  transform: scale(1.1);
+}
+
+.nadi-rating-star[data-filled="true"] {
+  color: var(--nadi-color-warning);
+}
+
+.nadi-rating-star[data-half="true"] {
+  position: relative;
+}
+
+.nadi-rating-star[data-half="true"]::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  color: var(--nadi-color-warning);
+  width: 50%;
+  overflow: hidden;
+}
+
+[data-nadi-rating][data-size="sm"] .nadi-rating-star {
+  font-size: 16px;
+}
+
+[data-nadi-rating][data-size="md"] .nadi-rating-star {
+  font-size: 24px;
+}
+
+[data-nadi-rating][data-size="lg"] .nadi-rating-star {
+  font-size: 32px;
+}

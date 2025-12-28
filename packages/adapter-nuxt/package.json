@@ -1,0 +1,36 @@
+{
+  "name": "@nadi/adapter-nuxt",
+  "version": "0.2.0",
+  "description": "Nuxt adapter for Nadi framework",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [
+    "nadi",
+    "nuxt",
+    "vue",
+    "ssr"
+  ],
+  "author": "Nadi Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "@nadi/core": "workspace:*",
+    "@nadi/compiler": "workspace:*",
+    "nuxt": "^3.0.0"
+  },
+  "devDependencies": {
+    "@nadi/core": "workspace:*",
+    "@nadi/compiler": "workspace:*",
+    "@nuxt/kit": "^3.9.0",
+    "@nuxt/schema": "^3.9.0",
+    "nuxt": "^3.9.0",
+    "typescript": "^5.3.3",
+    "tsup": "^8.0.0"
+  }
+}

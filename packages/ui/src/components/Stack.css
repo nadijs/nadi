@@ -1,0 +1,48 @@
+/**
+ * Stack Component CSS
+ */
+
+[data-nadi-stack] {
+  display: flex;
+}
+
+/* Direction */
+[data-nadi-stack][data-direction="vertical"] {
+  flex-direction: column;
+}
+
+[data-nadi-stack][data-direction="horizontal"] {
+  flex-direction: row;
+}
+
+/* Spacing */
+[data-nadi-stack][data-direction="vertical"][data-spacing="xs"] > * + * { margin-top: var(--nadi-space-1); }
+[data-nadi-stack][data-direction="vertical"][data-spacing="sm"] > * + * { margin-top: var(--nadi-space-2); }
+[data-nadi-stack][data-direction="vertical"][data-spacing="md"] > * + * { margin-top: var(--nadi-space-4); }
+[data-nadi-stack][data-direction="vertical"][data-spacing="lg"] > * + * { margin-top: var(--nadi-space-6); }
+[data-nadi-stack][data-direction="vertical"][data-spacing="xl"] > * + * { margin-top: var(--nadi-space-8); }
+
+[data-nadi-stack][data-direction="horizontal"][data-spacing="xs"] > * + * { margin-left: var(--nadi-space-1); }
+[data-nadi-stack][data-direction="horizontal"][data-spacing="sm"] > * + * { margin-left: var(--nadi-space-2); }
+[data-nadi-stack][data-direction="horizontal"][data-spacing="md"] > * + * { margin-left: var(--nadi-space-4); }
+[data-nadi-stack][data-direction="horizontal"][data-spacing="lg"] > * + * { margin-left: var(--nadi-space-6); }
+[data-nadi-stack][data-direction="horizontal"][data-spacing="xl"] > * + * { margin-left: var(--nadi-space-8); }
+
+/* Alignment */
+[data-nadi-stack][data-align="start"] { align-items: flex-start; }
+[data-nadi-stack][data-align="center"] { align-items: center; }
+[data-nadi-stack][data-align="end"] { align-items: flex-end; }
+[data-nadi-stack][data-align="stretch"] { align-items: stretch; }
+[data-nadi-stack][data-align="baseline"] { align-items: baseline; }
+
+/* Justify */
+[data-nadi-stack][data-justify="start"] { justify-content: flex-start; }
+[data-nadi-stack][data-justify="center"] { justify-content: center; }
+[data-nadi-stack][data-justify="end"] { justify-content: flex-end; }
+[data-nadi-stack][data-justify="between"] { justify-content: space-between; }
+[data-nadi-stack][data-justify="around"] { justify-content: space-around; }
+[data-nadi-stack][data-justify="evenly"] { justify-content: space-evenly; }
+
+/* Wrap */
+[data-nadi-stack][data-wrap="true"] { flex-wrap: wrap; }
+[data-nadi-stack][data-wrap="false"] { flex-wrap: nowrap; }

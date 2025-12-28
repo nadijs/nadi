@@ -1,0 +1,197 @@
+/**
+ * Button Component CSS
+ */
+
+[data-nadi-button] {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--nadi-font-sans);
+  font-weight: var(--nadi-font-weight-medium);
+  border-radius: var(--nadi-radius-base);
+  transition: all var(--nadi-duration-fast) var(--nadi-easing-default);
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+
+[data-nadi-button]:focus-visible {
+  outline: 2px solid var(--nadi-color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Disabled state */
+[data-nadi-button][data-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Loading state */
+[data-nadi-button][data-loading="true"] {
+  cursor: wait;
+  pointer-events: none;
+}
+
+/* Size variants */
+[data-nadi-button][data-size="xs"] {
+  height: var(--nadi-size-xs);
+  padding: 0 var(--nadi-space-2);
+  font-size: var(--nadi-font-size-xs);
+}
+
+[data-nadi-button][data-size="sm"] {
+  height: var(--nadi-size-sm);
+  padding: 0 var(--nadi-space-3);
+  font-size: var(--nadi-font-size-sm);
+}
+
+[data-nadi-button][data-size="md"] {
+  height: var(--nadi-size-md);
+  padding: 0 var(--nadi-space-4);
+  font-size: var(--nadi-font-size-base);
+}
+
+[data-nadi-button][data-size="lg"] {
+  height: var(--nadi-size-lg);
+  padding: 0 var(--nadi-space-6);
+  font-size: var(--nadi-font-size-lg);
+}
+
+[data-nadi-button][data-size="xl"] {
+  height: var(--nadi-size-xl);
+  padding: 0 var(--nadi-space-8);
+  font-size: var(--nadi-font-size-xl);
+}
+
+/* Variant: Primary */
+[data-nadi-button][data-variant="primary"] {
+  background: var(--nadi-color-primary-600);
+  color: white;
+}
+
+[data-nadi-button][data-variant="primary"]:hover {
+  background: var(--nadi-color-primary-700);
+}
+
+[data-nadi-button][data-variant="primary"]:active {
+  background: var(--nadi-color-primary-800);
+  transform: scale(0.98);
+}
+
+/* Variant: Secondary */
+[data-nadi-button][data-variant="secondary"] {
+  background: var(--nadi-color-secondary-600);
+  color: white;
+}
+
+[data-nadi-button][data-variant="secondary"]:hover {
+  background: var(--nadi-color-secondary-700);
+}
+
+[data-nadi-button][data-variant="secondary"]:active {
+  background: var(--nadi-color-secondary-800);
+  transform: scale(0.98);
+}
+
+/* Variant: Outline */
+[data-nadi-button][data-variant="outline"] {
+  background: transparent;
+  border-color: var(--nadi-color-border);
+  color: var(--nadi-color-text-primary);
+}
+
+[data-nadi-button][data-variant="outline"]:hover {
+  border-color: var(--nadi-color-primary-600);
+  color: var(--nadi-color-primary-600);
+  background: var(--nadi-color-primary-50);
+}
+
+[data-nadi-button][data-variant="outline"]:active {
+  transform: scale(0.98);
+}
+
+/* Variant: Ghost */
+[data-nadi-button][data-variant="ghost"] {
+  background: transparent;
+  color: var(--nadi-color-text-primary);
+}
+
+[data-nadi-button][data-variant="ghost"]:hover {
+  background: var(--nadi-color-surface);
+}
+
+[data-nadi-button][data-variant="ghost"]:active {
+  background: var(--nadi-color-border);
+  transform: scale(0.98);
+}
+
+/* Variant: Danger */
+[data-nadi-button][data-variant="danger"] {
+  background: var(--nadi-color-error);
+  color: white;
+}
+
+[data-nadi-button][data-variant="danger"]:hover {
+  background: var(--nadi-color-error-dark);
+}
+
+[data-nadi-button][data-variant="danger"]:active {
+  background: #b91c1c;
+  transform: scale(0.98);
+}
+
+/* Variant: Link */
+[data-nadi-button][data-variant="link"] {
+  background: transparent;
+  color: var(--nadi-color-primary-600);
+  padding: 0;
+  height: auto;
+  text-decoration: underline;
+}
+
+[data-nadi-button][data-variant="link"]:hover {
+  color: var(--nadi-color-primary-700);
+}
+
+/* Full width */
+[data-nadi-button][data-full-width="true"] {
+  width: 100%;
+}
+
+/* Ripple effect */
+.nadi-button-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  animation: nadi-ripple 600ms ease-out;
+}
+
+/* Loading spinner */
+.nadi-button-spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: nadi-spin 0.6s linear infinite;
+  margin-right: var(--nadi-space-2);
+}
+
+/* Icon spacing */
+[data-nadi-button] > svg {
+  width: 1.25em;
+  height: 1.25em;
+}
+
+[data-nadi-button] > svg:first-child:not(:last-child) {
+  margin-right: var(--nadi-space-2);
+}
+
+[data-nadi-button] > svg:last-child:not(:first-child) {
+  margin-left: var(--nadi-space-2);
+}

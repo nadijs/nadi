@@ -1,0 +1,221 @@
+/**
+ * Nadi UI Design System - CSS Variables
+ *
+ * All theme tokens are defined as CSS custom properties for maximum flexibility
+ * and performance. These can be overridden by users for custom theming.
+ */
+
+:root {
+  /* ========================================
+     COLOR SYSTEM
+     ======================================== */
+
+  /* Primary Colors */
+  --nadi-color-primary-50: #eff6ff;
+  --nadi-color-primary-100: #dbeafe;
+  --nadi-color-primary-200: #bfdbfe;
+  --nadi-color-primary-300: #93c5fd;
+  --nadi-color-primary-400: #60a5fa;
+  --nadi-color-primary-500: #3b82f6;
+  --nadi-color-primary-600: #2563eb;
+  --nadi-color-primary-700: #1d4ed8;
+  --nadi-color-primary-800: #1e40af;
+  --nadi-color-primary-900: #1e3a8a;
+
+  /* Secondary Colors */
+  --nadi-color-secondary-50: #f5f3ff;
+  --nadi-color-secondary-100: #ede9fe;
+  --nadi-color-secondary-200: #ddd6fe;
+  --nadi-color-secondary-300: #c4b5fd;
+  --nadi-color-secondary-400: #a78bfa;
+  --nadi-color-secondary-500: #8b5cf6;
+  --nadi-color-secondary-600: #7c3aed;
+  --nadi-color-secondary-700: #6d28d9;
+  --nadi-color-secondary-800: #5b21b6;
+  --nadi-color-secondary-900: #4c1d95;
+
+  /* Neutral Colors */
+  --nadi-color-gray-50: #f9fafb;
+  --nadi-color-gray-100: #f3f4f6;
+  --nadi-color-gray-200: #e5e7eb;
+  --nadi-color-gray-300: #d1d5db;
+  --nadi-color-gray-400: #9ca3af;
+  --nadi-color-gray-500: #6b7280;
+  --nadi-color-gray-600: #4b5563;
+  --nadi-color-gray-700: #374151;
+  --nadi-color-gray-800: #1f2937;
+  --nadi-color-gray-900: #111827;
+
+  /* Semantic Colors */
+  --nadi-color-success: #10b981;
+  --nadi-color-success-light: #d1fae5;
+  --nadi-color-success-dark: #047857;
+
+  --nadi-color-error: #ef4444;
+  --nadi-color-error-light: #fee2e2;
+  --nadi-color-error-dark: #dc2626;
+
+  --nadi-color-warning: #f59e0b;
+  --nadi-color-warning-light: #fef3c7;
+  --nadi-color-warning-dark: #d97706;
+
+  --nadi-color-info: #3b82f6;
+  --nadi-color-info-light: #dbeafe;
+  --nadi-color-info-dark: #2563eb;
+
+  /* Background & Surface */
+  --nadi-color-background: #ffffff;
+  --nadi-color-surface: #f9fafb;
+  --nadi-color-surface-elevated: #ffffff;
+
+  /* Text Colors */
+  --nadi-color-text-primary: #111827;
+  --nadi-color-text-secondary: #6b7280;
+  --nadi-color-text-tertiary: #9ca3af;
+  --nadi-color-text-disabled: #d1d5db;
+  --nadi-color-text-inverse: #ffffff;
+
+  /* Border Colors */
+  --nadi-color-border: #e5e7eb;
+  --nadi-color-border-hover: #d1d5db;
+  --nadi-color-border-focus: #3b82f6;
+
+  /* ========================================
+     SPACING SYSTEM
+     ======================================== */
+
+  --nadi-space-0: 0;
+  --nadi-space-1: 0.25rem;   /* 4px */
+  --nadi-space-2: 0.5rem;    /* 8px */
+  --nadi-space-3: 0.75rem;   /* 12px */
+  --nadi-space-4: 1rem;      /* 16px */
+  --nadi-space-5: 1.25rem;   /* 20px */
+  --nadi-space-6: 1.5rem;    /* 24px */
+  --nadi-space-8: 2rem;      /* 32px */
+  --nadi-space-10: 2.5rem;   /* 40px */
+  --nadi-space-12: 3rem;     /* 48px */
+  --nadi-space-16: 4rem;     /* 64px */
+  --nadi-space-20: 5rem;     /* 80px */
+  --nadi-space-24: 6rem;     /* 96px */
+
+  /* ========================================
+     TYPOGRAPHY SYSTEM
+     ======================================== */
+
+  /* Font Families */
+  --nadi-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --nadi-font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+
+  /* Font Sizes */
+  --nadi-font-size-xs: 0.75rem;    /* 12px */
+  --nadi-font-size-sm: 0.875rem;   /* 14px */
+  --nadi-font-size-base: 1rem;     /* 16px */
+  --nadi-font-size-lg: 1.125rem;   /* 18px */
+  --nadi-font-size-xl: 1.25rem;    /* 20px */
+  --nadi-font-size-2xl: 1.5rem;    /* 24px */
+  --nadi-font-size-3xl: 1.875rem;  /* 30px */
+  --nadi-font-size-4xl: 2.25rem;   /* 36px */
+  --nadi-font-size-5xl: 3rem;      /* 48px */
+
+  /* Font Weights */
+  --nadi-font-weight-normal: 400;
+  --nadi-font-weight-medium: 500;
+  --nadi-font-weight-semibold: 600;
+  --nadi-font-weight-bold: 700;
+
+  /* Line Heights */
+  --nadi-line-height-tight: 1.25;
+  --nadi-line-height-normal: 1.5;
+  --nadi-line-height-relaxed: 1.75;
+
+  /* ========================================
+     SIZING SYSTEM
+     ======================================== */
+
+  --nadi-size-xs: 1.5rem;    /* 24px */
+  --nadi-size-sm: 2rem;      /* 32px */
+  --nadi-size-md: 2.5rem;    /* 40px */
+  --nadi-size-lg: 3rem;      /* 48px */
+  --nadi-size-xl: 4rem;      /* 64px */
+
+  /* ========================================
+     RADIUS SYSTEM
+     ======================================== */
+
+  --nadi-radius-none: 0;
+  --nadi-radius-sm: 0.25rem;   /* 4px */
+  --nadi-radius-base: 0.5rem;  /* 8px */
+  --nadi-radius-md: 0.75rem;   /* 12px */
+  --nadi-radius-lg: 1rem;      /* 16px */
+  --nadi-radius-xl: 1.5rem;    /* 24px */
+  --nadi-radius-full: 9999px;
+
+  /* ========================================
+     SHADOW SYSTEM
+     ======================================== */
+
+  --nadi-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --nadi-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --nadi-shadow-base: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --nadi-shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --nadi-shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --nadi-shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  /* ========================================
+     Z-INDEX SYSTEM
+     ======================================== */
+
+  --nadi-z-dropdown: 1000;
+  --nadi-z-sticky: 1100;
+  --nadi-z-fixed: 1200;
+  --nadi-z-modal-backdrop: 1300;
+  --nadi-z-modal: 1400;
+  --nadi-z-popover: 1500;
+  --nadi-z-tooltip: 1600;
+  --nadi-z-toast: 1700;
+
+  /* ========================================
+     TRANSITION SYSTEM
+     ======================================== */
+
+  --nadi-duration-fast: 150ms;
+  --nadi-duration-base: 250ms;
+  --nadi-duration-slow: 350ms;
+
+  --nadi-easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --nadi-easing-in: cubic-bezier(0.4, 0, 1, 1);
+  --nadi-easing-out: cubic-bezier(0, 0, 0.2, 1);
+  --nadi-easing-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --nadi-easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ========================================
+   DARK THEME
+   ======================================== */
+
+[data-nadi-theme="dark"] {
+  /* Background & Surface */
+  --nadi-color-background: #0f172a;
+  --nadi-color-surface: #1e293b;
+  --nadi-color-surface-elevated: #334155;
+
+  /* Text Colors */
+  --nadi-color-text-primary: #f1f5f9;
+  --nadi-color-text-secondary: #cbd5e1;
+  --nadi-color-text-tertiary: #94a3b8;
+  --nadi-color-text-disabled: #64748b;
+  --nadi-color-text-inverse: #0f172a;
+
+  /* Border Colors */
+  --nadi-color-border: #334155;
+  --nadi-color-border-hover: #475569;
+  --nadi-color-border-focus: #60a5fa;
+
+  /* Adjust shadows for dark mode */
+  --nadi-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --nadi-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.5), 0 1px 2px -1px rgb(0 0 0 / 0.5);
+  --nadi-shadow-base: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+  --nadi-shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+  --nadi-shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5);
+  --nadi-shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.75);
+}

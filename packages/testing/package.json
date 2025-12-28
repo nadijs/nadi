@@ -1,0 +1,45 @@
+{
+  "name": "@nadi/testing",
+  "version": "0.2.0",
+  "description": "Testing utilities for Nadi framework",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "nadi",
+    "testing",
+    "test-utils",
+    "vitest"
+  ],
+  "author": "Nadi Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "@nadi/core": "workspace:*",
+    "vitest": "^1.0.0"
+  },
+  "dependencies": {
+    "@testing-library/dom": "^10.4.0"
+  },
+  "devDependencies": {
+    "@nadi/core": "workspace:*",
+    "typescript": "^5.3.3",
+    "tsup": "^8.0.0",
+    "vitest": "^1.0.0"
+  }
+}
