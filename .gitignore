@@ -32,3 +32,13 @@ out
 # Temporary files
 .tmp
 temp
+
+# Internal documentation (not for public)
+IMPLEMENTATION.md
+IMPLEMENTATION_COMPLETE.md
+SETUP.md
+TESTING_GUIDE.md
+BUNDLE_SIZE.md
+PRERENDER.md
+GITHUB_SETUP_INSTRUCTIONS.md
+.github-setup-commands.sh
