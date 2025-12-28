@@ -11,7 +11,7 @@ export default defineConfig({
     preset: 'smallest',
     propertyReadSideEffects: false,
   },
-  sourcemap: true,
+  sourcemap: false,
   target: 'es2022',
   esbuildOptions(options) {
     options.mangleProps = /^_/;

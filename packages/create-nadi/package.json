@@ -1,6 +1,6 @@
 {
   "name": "create-nadi",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.1",
   "description": "Scaffolding tool for creating Nadi projects",
   "type": "module",
   "bin": {
@@ -24,6 +24,13 @@
   ],
   "author": "Nadi Team",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nadijs/nadi",
+    "directory": "packages/create-nadi"
+  },
+  "homepage": "https://nadijs.org",
+  "bugs": "https://github.com/nadijs/nadi/issues",
   "dependencies": {
     "prompts": "^2.4.2",
     "kolorist": "^1.8.0",

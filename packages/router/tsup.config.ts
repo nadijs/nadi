@@ -8,6 +8,6 @@ export default defineConfig({
   minify: true,
   splitting: false,
   treeshake: true,
-  sourcemap: true,
+  sourcemap: false,
   target: 'es2022',
 });

@@ -1,6 +1,6 @@
 {
   "name": "@nadi/core",
-  "version": "0.2.0",
+  "version": "0.2.0-alpha.1",
   "description": "Nadi core signals runtime with SSR support",
   "type": "module",
   "main": "./dist/index.js",
@@ -43,6 +43,13 @@
   ],
   "author": "Nadi Team",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nadijs/nadi",
+    "directory": "packages/core"
+  },
+  "homepage": "https://nadijs.org",
+  "bugs": "https://github.com/nadijs/nadi/issues",
   "devDependencies": {
     "@types/node": "^20.10.6",
     "tsup": "^8.0.1",

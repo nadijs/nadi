@@ -1,6 +1,6 @@
 {
   "name": "@nadi/router",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.1",
   "description": "Lightweight client-side router for Nadi",
   "type": "module",
   "main": "./dist/index.js",
@@ -31,6 +31,13 @@
   ],
   "author": "Nadi Team",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nadijs/nadi",
+    "directory": "packages/router"
+  },
+  "homepage": "https://nadijs.org",
+  "bugs": "https://github.com/nadijs/nadi/issues",
   "dependencies": {
     "@nadi/core": "workspace:*"
   },

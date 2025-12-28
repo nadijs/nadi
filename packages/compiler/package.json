@@ -1,6 +1,6 @@
 {
   "name": "@nadi/compiler",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.1",
   "description": "Nadi single-file component compiler",
   "type": "module",
   "main": "./dist/index.js",
@@ -29,6 +29,13 @@
   ],
   "author": "Nadi Team",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nadijs/nadi",
+    "directory": "packages/compiler"
+  },
+  "homepage": "https://nadijs.org",
+  "bugs": "https://github.com/nadijs/nadi/issues",
   "dependencies": {
     "@babel/parser": "^7.23.6",
     "@babel/traverse": "^7.23.7",
