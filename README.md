@@ -192,6 +192,17 @@ const form = useForm({
 });
 ```
 
+## 🗂️ Repository Structure
+
+Nadi.js is organized across multiple repositories for better maintainability:
+
+- **[nadijs/nadi](https://github.com/nadijs/nadi)** (this repo) - Core framework packages
+- **[nadijs/docs](https://github.com/nadijs/docs)** - Documentation website ([nadijs.org](https://nadijs.org))
+- **[nadijs/devtools](https://github.com/nadijs/devtools)** - Browser extension for debugging
+- **[nadijs/sample-apps](https://github.com/nadijs/sample-apps)** - Full application examples
+
+See [REPOSITORIES.md](./REPOSITORIES.md) for detailed information.
+
 ## 🏗️ Development
 
 ### Prerequisites
@@ -227,13 +238,24 @@ nadi/
 │   ├── core/         # Reactive runtime
 │   ├── compiler/     # SFC compiler
 │   ├── router/       # Client-side routing
-│   └── ...
-├── website/          # Documentation site
-├── playground/       # Development playground
-├── examples/         # Example .nadi files
-├── sample_apps/      # Full sample applications
-└── devtools/         # Browser extension
+│   ├── forms/        # Form management
+│   ├── meta/         # SEO/meta tags
+│   ├── ui/           # UI components
+│   ├── testing/      # Testing utilities
+│   ├── prerender/    # SSR/SSG
+│   ├── codemod/      # Migration tools
+│   ├── echo/         # WebSocket support
+│   ├── vite-plugin/  # Vite integration
+│   ├── create-nadi/  # Project scaffolding
+│   └── adapter-*/    # Backend adapters
+├── examples/         # Simple .nadi examples
+└── README.md
 ```
+
+**Other repositories:**
+- **docs** → [nadijs/docs](https://github.com/nadijs/docs)
+- **devtools** → [nadijs/devtools](https://github.com/nadijs/devtools)
+- **sample-apps** → [nadijs/sample-apps](https://github.com/nadijs/sample-apps)
 
 ## 📚 Documentation
 
