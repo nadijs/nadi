@@ -1,10 +1,10 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Timeline.tsx
  * @description Timeline component for displaying events
  */
 
-import { type JSX, For } from '@nadi/core';
+import { type JSX, For } from '@nadi.js/core';
 
 export interface TimelineItem {
   title: string;

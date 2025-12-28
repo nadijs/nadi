@@ -15,5 +15,5 @@ export default defineConfig({
     options.mangleProps = /^_/;
     options.pure = ['console.log'];
   },
-  external: ['@nadi/core', '@nadi/compiler', 'vite'],
+  external: ['@nadi.js/core', '@nadi.js/compiler', 'vite'],
 });

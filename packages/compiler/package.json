@@ -1,5 +1,5 @@
 {
-  "name": "@nadi/compiler",
+  "name": "@nadi.js/compiler",
   "version": "0.1.0-alpha.1",
   "description": "Nadi single-file component compiler",
   "type": "module",

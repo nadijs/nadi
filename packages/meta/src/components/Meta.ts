@@ -2,7 +2,7 @@
  * Meta component - Adds meta tags to document head
  */
 
-import { effect, onCleanup } from '@nadi/core';
+import { effect, onCleanup } from '@nadi.js/core';
 import { addMetaTag, isServerEnvironment } from '../context';
 import type { MetaProps } from '../types';
 

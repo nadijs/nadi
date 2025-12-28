@@ -2,7 +2,7 @@
  * Style component - Adds inline styles to document head
  */
 
-import { onCleanup } from '@nadi/core';
+import { onCleanup } from '@nadi.js/core';
 import { addMetaTag, isServerEnvironment } from '../context';
 import type { StyleProps } from '../types';
 

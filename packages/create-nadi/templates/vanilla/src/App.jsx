@@ -1,4 +1,4 @@
-import { signal } from '@nadi/core';
+import { signal } from '@nadi.js/core';
 
 function App() {
   const count = signal(0);

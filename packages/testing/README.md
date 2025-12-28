@@ -22,7 +22,7 @@ npm install -D @nadi/testing vitest @vitest/ui
 ```typescript
 import { describe, it, expect } from 'vitest';
 import { renderComponent, fireEvent, waitFor, screen } from '@nadi/testing';
-import { signal } from '@nadi/core';
+import { signal } from '@nadi.js/core';
 import MyComponent from './MyComponent';
 
 describe('MyComponent', () => {

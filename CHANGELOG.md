@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Planned
+
 - Laravel integration package (@nadi/laravel)
 - Client router package (@nadi/router)
 - Forms utilities package (@nadi/forms)
@@ -17,8 +18,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2025-12-25
 
 ### Added
+
 - Initial monorepo setup with Turborepo
-- `@nadi/core` package with signals-based reactivity (~2KB)
+- `@nadi.js/core` package with signals-based reactivity (~2KB)
   - `signal()` - Reactive primitive
   - `computed()` - Derived state
   - `effect()` - Side effects with auto-cleanup
@@ -29,7 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Control flow components: `Show`, `For`, `Portal`, `ErrorBoundary`
   - JSX runtime for direct DOM manipulation
   - Full TypeScript support with JSX types
-- `@nadi/compiler` package for `.nadi` SFC compilation
+- `@nadi.js/compiler` package for `.nadi` SFC compilation
   - Single-file component parser
   - JSX template compilation
   - Scoped CSS with PostCSS
@@ -46,6 +48,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - MIT License
 
 ### Technical Details
+
 - TypeScript 5.3+ with strict mode
 - ES2022 target
 - Vite for building and development

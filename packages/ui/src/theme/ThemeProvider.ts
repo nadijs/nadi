@@ -16,7 +16,7 @@
  * ```
  */
 
-import { signal, effect, onCleanup } from '@nadi/core';
+import { signal, effect, onCleanup } from '@nadi.js/core';
 
 export type Theme = 'light' | 'dark' | 'system';
 

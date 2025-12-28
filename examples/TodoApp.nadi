@@ -41,8 +41,8 @@
 </template>
 
 <script lang="ts">
-import { signal, computed } from '@nadi/core';
-import { For } from '@nadi/core';
+import { signal, computed } from '@nadi.js/core';
+import { For } from '@nadi.js/core';
 
 interface Todo {
   id: number;

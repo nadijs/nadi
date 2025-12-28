@@ -18,8 +18,8 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@nadi/core"><img src="https://img.shields.io/npm/v/@nadi/core.svg?label=@nadi/core" alt="npm version"></a>
-  <a href="https://www.npmjs.com/package/@nadi/core"><img src="https://img.shields.io/npm/dm/@nadi/core.svg" alt="npm downloads"></a>
+  <a href="https://www.npmjs.com/package/@nadi.js/core"><img src="https://img.shields.io/npm/v/@nadi.js/core.svg?label=@nadi.js/core" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/@nadi.js/core"><img src="https://img.shields.io/npm/dm/@nadi.js/core.svg" alt="npm downloads"></a>
   <a href="https://github.com/nadijs/nadi/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="license"></a>
 </p>
 
@@ -45,16 +45,16 @@ Nadi.js is a modern reactive framework that's **85-95% smaller** than React, Vue
 
 This monorepo contains the following packages:
 
-| Package                               | Version                                                                                                 | Description                                     |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
-| [@nadi/core](./packages/core)         | [![npm](https://img.shields.io/npm/v/@nadi/core.svg)](https://www.npmjs.com/package/@nadi/core)         | Signals runtime with reactive primitives (~2KB) |
-| [@nadi/compiler](./packages/compiler) | [![npm](https://img.shields.io/npm/v/@nadi/compiler.svg)](https://www.npmjs.com/package/@nadi/compiler) | Single-file component compiler                  |
-| [@nadi/router](./packages/router)     | [![npm](https://img.shields.io/npm/v/@nadi/router.svg)](https://www.npmjs.com/package/@nadi/router)     | Lightweight client-side router (~1.3KB)         |
-| [@nadi/forms](./packages/forms)       | [![npm](https://img.shields.io/npm/v/@nadi/forms.svg)](https://www.npmjs.com/package/@nadi/forms)       | Form validation and state management            |
-| [@nadi/meta](./packages/meta)         | [![npm](https://img.shields.io/npm/v/@nadi/meta.svg)](https://www.npmjs.com/package/@nadi/meta)         | SEO and meta tags management                    |
-| [@nadi/ui](./packages/ui)             | [![npm](https://img.shields.io/npm/v/@nadi/ui.svg)](https://www.npmjs.com/package/@nadi/ui)             | Professional UI component library               |
-| [@nadi/testing](./packages/testing)   | [![npm](https://img.shields.io/npm/v/@nadi/testing.svg)](https://www.npmjs.com/package/@nadi/testing)   | Testing utilities for Nadi apps                 |
-| [create-nadi](./packages/create-nadi) | [![npm](https://img.shields.io/npm/v/create-nadi.svg)](https://www.npmjs.com/package/create-nadi)       | Project scaffolding CLI                         |
+| Package                                  | Version                                                                                                       | Description                                     |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| [@nadi.js/core](./packages/core)         | [![npm](https://img.shields.io/npm/v/@nadi.js/core.svg)](https://www.npmjs.com/package/@nadi.js/core)         | Signals runtime with reactive primitives (~2KB) |
+| [@nadi.js/compiler](./packages/compiler) | [![npm](https://img.shields.io/npm/v/@nadi.js/compiler.svg)](https://www.npmjs.com/package/@nadi.js/compiler) | Single-file component compiler                  |
+| [@nadi/router](./packages/router)        | [![npm](https://img.shields.io/npm/v/@nadi/router.svg)](https://www.npmjs.com/package/@nadi/router)           | Lightweight client-side router (~1.3KB)         |
+| [@nadi/forms](./packages/forms)          | [![npm](https://img.shields.io/npm/v/@nadi/forms.svg)](https://www.npmjs.com/package/@nadi/forms)             | Form validation and state management            |
+| [@nadi/meta](./packages/meta)            | [![npm](https://img.shields.io/npm/v/@nadi/meta.svg)](https://www.npmjs.com/package/@nadi/meta)               | SEO and meta tags management                    |
+| [@nadi/ui](./packages/ui)                | [![npm](https://img.shields.io/npm/v/@nadi/ui.svg)](https://www.npmjs.com/package/@nadi/ui)                   | Professional UI component library               |
+| [@nadi/testing](./packages/testing)      | [![npm](https://img.shields.io/npm/v/@nadi/testing.svg)](https://www.npmjs.com/package/@nadi/testing)         | Testing utilities for Nadi apps                 |
+| [create-nadi](./packages/create-nadi)    | [![npm](https://img.shields.io/npm/v/create-nadi.svg)](https://www.npmjs.com/package/create-nadi)             | Project scaffolding CLI                         |
 
 ### Backend Adapters
 
@@ -80,13 +80,13 @@ npm run dev
 ### Manual Installation
 
 ```bash
-npm install @nadi/core@alpha @nadi/compiler@alpha
+npm install @nadi.js/core@alpha @nadi.js/compiler@alpha
 ```
 
 ### Basic Example
 
 ```typescript
-import { signal, computed } from '@nadi/core';
+import { signal, computed } from '@nadi.js/core';
 
 // Create reactive state
 const [count, setCount] = signal(0);
@@ -105,7 +105,7 @@ setCount(count() + 1); // UI updates automatically
 ```html
 <!-- Counter.nadi -->
 <script lang="ts">
-  import { signal, computed } from '@nadi/core';
+  import { signal, computed } from '@nadi.js/core';
   import { Button } from '@nadi/ui';
 
   export default function Counter() {
@@ -137,7 +137,7 @@ setCount(count() + 1); // UI updates automatically
 ### Reactivity System
 
 ```typescript
-import { signal, computed, effect, batch } from '@nadi/core';
+import { signal, computed, effect, batch } from '@nadi.js/core';
 
 // Signals - writable reactive values
 const [count, setCount] = signal(0);
@@ -253,6 +253,7 @@ nadi/
 ```
 
 **Other repositories:**
+
 - **docs** → [nadijs/docs](https://github.com/nadijs/docs)
 - **devtools** → [nadijs/devtools](https://github.com/nadijs/devtools)
 - **sample-apps** → [nadijs/sample-apps](https://github.com/nadijs/sample-apps)

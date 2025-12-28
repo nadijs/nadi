@@ -1,10 +1,10 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Steps.tsx
  * @description Step progress indicator component
  */
 
-import { type JSX, For } from '@nadi/core';
+import { type JSX, For } from '@nadi.js/core';
 
 export interface StepItem {
   title: string;

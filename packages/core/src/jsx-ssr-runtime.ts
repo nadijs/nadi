@@ -26,7 +26,7 @@ function escapeHtml(text: string): string {
     '"': '&quot;',
     "'": '&#039;',
   };
-  return text.replace(/[&<>"']/g, (char) => map[char]);
+  return text.replace(/[&<>"']/g, (char) => map[char as keyof typeof map] || char);
 }
 
 /**
@@ -105,7 +105,7 @@ function renderChildren(children: any): string {
 /**
  * JSX factory for SSR
  */
-export function jsx(type: any, props: any, key?: string): JSX.Element | string {
+export function jsx(type: any, props: any): JSX.Element | string {
   const { children, ...restProps } = props || {};
 
   // Handle fragments

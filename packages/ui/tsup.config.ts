@@ -54,7 +54,7 @@ export default defineConfig({
     'src/animations/index.ts',
   ],
   format: ['esm'],
-  dts: false, // Disable for now due to @nadi/core jsx-runtime issue
+  dts: false, // Disable for now due to @nadi.js/core jsx-runtime issue
   sourcemap: true,
   clean: true,
   target: 'es2022',
@@ -63,6 +63,6 @@ export default defineConfig({
   splitting: false,
   esbuildOptions(options) {
     options.jsx = 'automatic';
-    options.jsxImportSource = '@nadi/core';
+    options.jsxImportSource = '@nadi.js/core';
   },
 });

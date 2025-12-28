@@ -1,13 +1,13 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Input.ts
  * @description Text input component with @nadi/forms integration
- * 
+ *
  * @example
  * ```tsx
  * import { Input } from '@nadi/ui';
  * import { createField } from '@nadi/forms';
- * 
+ *
  * // Standalone input
  * const [value, setValue] = signal('');
  * <Input
@@ -16,7 +16,7 @@
  *   label="Email"
  *   placeholder="you@example.com"
  * />
- * 
+ *
  * // With @nadi/forms field (automatic binding!)
  * const emailField = createField({
  *   initialValue: '',
@@ -24,7 +24,7 @@
  *     { validator: (v) => v.includes('@'), message: 'Must be valid email' }
  *   ]
  * });
- * 
+ *
  * <Input
  *   field={emailField}
  *   label="Email"
@@ -34,7 +34,7 @@
  * ```
  */
 
-import { type JSX, type Accessor } from '@nadi/core';
+import { type JSX, type Accessor } from '@nadi.js/core';
 import type { Field } from '@nadi/forms';
 
 export interface InputProps {
@@ -42,97 +42,97 @@ export interface InputProps {
    * Input value (controlled)
    */
   value?: string | Accessor<string>;
-  
+
   /**
    * Input change handler
    */
   onInput?: (event: InputEvent & { currentTarget: HTMLInputElement }) => void;
-  
+
   /**
    * Blur handler
    */
   onBlur?: (event: FocusEvent & { currentTarget: HTMLInputElement }) => void;
-  
+
   /**
    * @nadi/forms field for automatic binding
    * When provided, value/onInput/error are auto-bound
    */
   field?: Field<string>;
-  
+
   /**
    * Input type
    * @default 'text'
    */
   type?: 'text' | 'email' | 'password' | 'url' | 'tel' | 'search' | 'number';
-  
+
   /**
    * Input size
    * @default 'md'
    */
   size?: 'sm' | 'md' | 'lg';
-  
+
   /**
    * Label text
    */
   label?: string;
-  
+
   /**
    * Show required asterisk
    * @default false
    */
   required?: boolean;
-  
+
   /**
    * Placeholder text
    */
   placeholder?: string;
-  
+
   /**
    * Helper text shown below input
    */
   helperText?: string;
-  
+
   /**
    * Error message (overrides field error)
    */
   error?: string | Accessor<string | null>;
-  
+
   /**
    * Disabled state
    */
   disabled?: boolean | Accessor<boolean>;
-  
+
   /**
    * Full width
    * @default true
    */
   fullWidth?: boolean;
-  
+
   /**
    * Additional CSS classes
    */
   class?: string;
-  
+
   /**
    * Inline styles
    */
   style?: JSX.CSSProperties | string;
-  
+
   /**
    * Input ID (auto-generated if not provided)
    */
   id?: string;
-  
+
   /**
    * Input name attribute
    */
   name?: string;
-  
+
   /**
    * Autocomplete attribute
    */
   autocomplete?: string;
-  
+
   /**
    * Input ref
    */
@@ -141,18 +141,18 @@ export interface InputProps {
 
 /**
  * Input Component
- * 
+ *
  * **Revolutionary @nadi/forms integration:**
  * - React: Need value={field.value} onChange={field.onChange} error={field.error}...
  * - Vue: Need v-model + error binding + manual validation triggers
  * - Nadi: Just `field={emailField}` - everything auto-bound via signals!
- * 
+ *
  * The field's signals are directly accessed in the template, so updates
  * only re-render the specific parts that changed (error text, border color).
  * No full component re-renders like React.
  */
 export function Input(props: InputProps): JSX.Element {
-  const resolveValue = (value: any) => 
+  const resolveValue = (value: any) =>
     typeof value === 'function' ? value() : value;
 
   // Generate unique ID if not provided
@@ -183,11 +183,11 @@ export function Input(props: InputProps): JSX.Element {
   // Handle input change
   const handleInput = (event: InputEvent & { currentTarget: HTMLInputElement }) => {
     const newValue = event.currentTarget.value;
-    
+
     if (props.field) {
       props.field.setValue(newValue);
     }
-    
+
     props.onInput?.(event);
   };
 
@@ -196,7 +196,7 @@ export function Input(props: InputProps): JSX.Element {
     if (props.field) {
       props.field.setTouched(true);
     }
-    
+
     props.onBlur?.(event);
   };
 
@@ -214,7 +214,7 @@ export function Input(props: InputProps): JSX.Element {
           )}
         </label>
       )}
-      
+
       <input
         ref={props.ref}
         id={inputId}
@@ -229,10 +229,10 @@ export function Input(props: InputProps): JSX.Element {
         autocomplete={props.autocomplete}
         aria-invalid={hasError()}
         aria-describedby={
-          hasError() 
+          hasError()
             ? `${inputId}-error`
-            : props.helperText 
-              ? `${inputId}-helper` 
+            : props.helperText
+              ? `${inputId}-helper`
               : undefined
         }
         data-nadi-component="input"
@@ -242,13 +242,13 @@ export function Input(props: InputProps): JSX.Element {
         class={props.class}
         style={props.style}
       />
-      
+
       {props.helperText && !hasError() && (
         <span id={`${inputId}-helper`} class="nadi-input-helper">
           {props.helperText}
         </span>
       )}
-      
+
       {hasError() && (
         <span id={`${inputId}-error`} class="nadi-input-error" role="alert">
           {getError()}

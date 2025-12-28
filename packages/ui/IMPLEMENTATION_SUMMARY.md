@@ -213,7 +213,7 @@ showToast({ message: 'Hello!', variant: 'success' });
 ### 🚀 Next Steps (Future Enhancements)
 
 1. **Complete Remaining Components**: Implement all 14 placeholder components
-2. **TypeScript Declarations**: Fix @nadi/core jsx-runtime types for full IntelliSense
+2. **TypeScript Declarations**: Fix @nadi.js/core jsx-runtime types for full IntelliSense
 3. **Interactive Playground**: Build live component demo site
 4. **Accessibility Tests**: Add automated a11y testing with vitest
 5. **Icon Library**: Create optional `@nadi/icons` package
@@ -228,7 +228,7 @@ showToast({ message: 'Hello!', variant: 'success' });
 ```tsx
 import { Button, Input, Grid, Card, showToast, ToastContainer } from '@nadi/ui';
 import '@nadi/ui/styles.css';
-import { signal } from '@nadi/core';
+import { signal } from '@nadi.js/core';
 
 function App() {
   const [name, setName] = signal('');

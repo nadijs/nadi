@@ -2,8 +2,7 @@
  * Hydration utilities for client-side activation of SSR content
  */
 
-import { effect, batch } from './reactive/signals';
-import { jsx as clientJsx } from './jsx-runtime';
+import { batch } from './reactive/signals';
 
 interface HydrationNode {
   id: number;
@@ -31,7 +30,7 @@ export function hydrate(component: () => any, container: HTMLElement | null): ()
       const comment = node as Comment;
       const match = comment.data.match(/^h-(\d+)$/);
 
-      if (match) {
+      if (match && match[1]) {
         const id = parseInt(match[1], 10);
         const endMarker = findEndMarker(node, id);
 

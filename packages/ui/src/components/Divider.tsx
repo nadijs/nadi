@@ -1,10 +1,10 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Divider.tsx
  * @description Divider/separator component
  */
 
-import { type JSX } from '@nadi/core';
+import { type JSX } from '@nadi.js/core';
 
 export interface DividerProps {
   orientation?: 'horizontal' | 'vertical';

@@ -2,7 +2,7 @@
  * Laravel adapter client-side utilities
  */
 
-import { hydrate } from '@nadi/core';
+import { hydrate } from '@nadi.js/core';
 
 export interface LaravelNadiConfig {
   csrfToken?: string;

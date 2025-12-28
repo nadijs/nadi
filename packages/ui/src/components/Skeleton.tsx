@@ -1,10 +1,10 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Skeleton.tsx
  * @description Loading skeleton component
  */
 
-import { type JSX } from '@nadi/core';
+import { type JSX } from '@nadi.js/core';
 
 export interface SkeletonProps {
   variant?: 'text' | 'circular' | 'rectangular' | 'rounded';

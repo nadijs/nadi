@@ -3,8 +3,8 @@
  */
 
 import type { Request, Response, NextFunction, RequestHandler } from 'express';
-import { renderToString, renderToHtml } from '@nadi/core';
-import { compile } from '@nadi/compiler';
+import { renderToString } from '@nadi.js/core';
+import { compile } from '@nadi.js/compiler';
 import fs from 'fs';
 import path from 'path';
 
@@ -40,7 +40,7 @@ export function nadi(options: NadiExpressOptions): RequestHandler {
     }
   }
 
-  return (req: Request, res: Response, next: NextFunction) => {
+  return (_req: Request, res: Response, next: NextFunction) => {
     // Add nadi render method to response
     (res as any).nadi = async (component: string, props: Record<string, any> = {}) => {
       try {
@@ -101,7 +101,7 @@ async function renderComponent(
   component: string,
   props: Record<string, any>,
   componentsDir: string,
-  dev: boolean
+  _dev: boolean
 ): Promise<string> {
   try {
     const componentPath = path.join(componentsDir, `${component}.nadi`);
@@ -116,7 +116,7 @@ async function renderComponent(
     // Execute compiled code and render
     // In production, components would be pre-compiled
     const Component = eval(compiled.code);
-    return renderToString(() => <Component {...props} />);
+    return renderToString(Component, props);
   } catch (error) {
     console.error('Component render error:', error);
     return '';
@@ -129,7 +129,7 @@ function getScripts(manifest: any, dev: boolean): string {
   }
 
   const scripts: string[] = [];
-  for (const [file, data] of Object.entries(manifest)) {
+  for (const [_file, data] of Object.entries(manifest)) {
     if ((data as any).isEntry) {
       scripts.push(`<script type="module" src="/build/${(data as any).file}"></script>`);
     }
@@ -140,7 +140,7 @@ function getScripts(manifest: any, dev: boolean): string {
 
 function getStyles(manifest: any): string {
   const styles: string[] = [];
-  for (const [file, data] of Object.entries(manifest)) {
+  for (const [_file, data] of Object.entries(manifest)) {
     if ((data as any).css) {
       for (const cssFile of (data as any).css) {
         styles.push(`<link rel="stylesheet" href="/build/${cssFile}">`);

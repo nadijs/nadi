@@ -2,7 +2,7 @@
  * Form implementation for @nadi/forms
  */
 
-import { signal, computed, batch } from '@nadi/core';
+import { signal, computed, batch } from '@nadi.js/core';
 import { createField } from './field';
 import type { Form, FormConfig, Fields } from './types';
 

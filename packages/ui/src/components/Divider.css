@@ -1,4 +1,4 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * Divider Component CSS
  */
@@ -9,7 +9,7 @@
   margin: var(--nadi-space-4) 0;
 }
 
-[data-nadi-divider][data-orientation="vertical"] {
+[data-nadi-divider][data-orientation='vertical'] {
   border-top: none;
   border-left: 1px solid var(--nadi-color-border);
   height: auto;
@@ -17,11 +17,11 @@
   margin: 0 var(--nadi-space-4);
 }
 
-[data-nadi-divider][data-variant="dashed"] {
+[data-nadi-divider][data-variant='dashed'] {
   border-style: dashed;
 }
 
-[data-nadi-divider][data-variant="dotted"] {
+[data-nadi-divider][data-variant='dotted'] {
   border-style: dotted;
 }
 

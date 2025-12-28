@@ -1,4 +1,4 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * Radio Component CSS
  */
@@ -9,7 +9,7 @@
   gap: var(--nadi-space-2);
 }
 
-[data-nadi-radio-group][data-direction="horizontal"] {
+[data-nadi-radio-group][data-direction='horizontal'] {
   flex-direction: row;
 }
 
@@ -21,7 +21,7 @@
   user-select: none;
 }
 
-[data-nadi-radio][data-disabled="true"] {
+[data-nadi-radio][data-disabled='true'] {
   opacity: 0.6;
   cursor: not-allowed;
 }

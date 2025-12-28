@@ -1,10 +1,10 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Select.tsx
  * @description Select dropdown component
  */
 
-import { type JSX, type Accessor, For } from '@nadi/core';
+import { type JSX, type Accessor, For } from '@nadi.js/core';
 
 export interface SelectOption {
   value: string;

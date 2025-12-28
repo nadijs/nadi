@@ -2,7 +2,7 @@
  * Webpack loader for .nadi files in Next.js
  */
 
-const { compile } = require('@nadi/compiler');
+const { compile } = require('@nadi.js/compiler');
 
 module.exports = function nadiLoader(source) {
   const callback = this.async();

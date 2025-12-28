@@ -1,10 +1,10 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Radio.tsx
  * @description Radio button and radio group components
  */
 
-import { type JSX, type Accessor, For } from '@nadi/core';
+import { type JSX, type Accessor, For } from '@nadi.js/core';
 
 export interface RadioOption {
   value: string;

@@ -1,10 +1,10 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Rating.tsx
  * @description Star rating component
  */
 
-import { type JSX, For, signal, type Accessor } from '@nadi/core';
+import { type JSX, For, signal, type Accessor } from '@nadi.js/core';
 
 export interface RatingProps {
   value?: number | Accessor<number>;

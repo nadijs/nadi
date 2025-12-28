@@ -1,4 +1,4 @@
-import type { JSX } from '@nadi/core';
+import type { JSX } from '@nadi.js/core';
 import { useRoute } from '../hooks';
 
 export interface RouteProps {

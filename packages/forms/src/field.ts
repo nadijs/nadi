@@ -2,7 +2,7 @@
  * Field implementation for @nadi/forms
  */
 
-import { signal, computed } from '@nadi/core';
+import { signal, computed } from '@nadi.js/core';
 import type { Field, FieldConfig, ValidationRule } from './types';
 
 export function createField<T>(config: FieldConfig<T>): Field<T> {

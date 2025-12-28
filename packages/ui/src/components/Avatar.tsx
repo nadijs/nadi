@@ -1,10 +1,10 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Avatar.tsx
  * @description User avatar component
  */
 
-import { type JSX, signal } from '@nadi/core';
+import { type JSX, signal } from '@nadi.js/core';
 
 export interface AvatarProps {
   src?: string;

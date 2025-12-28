@@ -1,10 +1,10 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Checkbox.tsx
  * @description Checkbox input component
  */
 
-import { type JSX, type Accessor } from '@nadi/core';
+import { type JSX, type Accessor } from '@nadi.js/core';
 
 export interface CheckboxProps {
   checked?: boolean | Accessor<boolean>;

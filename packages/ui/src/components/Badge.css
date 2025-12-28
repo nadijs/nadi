@@ -1,4 +1,4 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * Badge Component CSS
  */
@@ -15,49 +15,49 @@
 }
 
 /* Variants */
-[data-nadi-badge][data-variant="primary"] {
+[data-nadi-badge][data-variant='primary'] {
   background: var(--nadi-color-primary-100);
   color: var(--nadi-color-primary-700);
 }
 
-[data-nadi-badge][data-variant="success"] {
+[data-nadi-badge][data-variant='success'] {
   background: var(--nadi-color-success-light);
   color: var(--nadi-color-success-dark);
 }
 
-[data-nadi-badge][data-variant="error"] {
+[data-nadi-badge][data-variant='error'] {
   background: var(--nadi-color-error-light);
   color: var(--nadi-color-error-dark);
 }
 
-[data-nadi-badge][data-variant="warning"] {
+[data-nadi-badge][data-variant='warning'] {
   background: var(--nadi-color-warning-light);
   color: var(--nadi-color-warning-dark);
 }
 
-[data-nadi-badge][data-variant="info"] {
+[data-nadi-badge][data-variant='info'] {
   background: var(--nadi-color-info-light);
   color: var(--nadi-color-info-dark);
 }
 
-[data-nadi-badge][data-variant="neutral"] {
+[data-nadi-badge][data-variant='neutral'] {
   background: var(--nadi-color-gray-200);
   color: var(--nadi-color-gray-700);
 }
 
 /* Sizes */
-[data-nadi-badge][data-size="sm"] {
+[data-nadi-badge][data-size='sm'] {
   font-size: 0.625rem;
   padding: 2px var(--nadi-space-1);
 }
 
-[data-nadi-badge][data-size="lg"] {
+[data-nadi-badge][data-size='lg'] {
   font-size: var(--nadi-font-size-sm);
   padding: var(--nadi-space-2) var(--nadi-space-3);
 }
 
 /* Dot badge */
-[data-nadi-badge][data-dot="true"] {
+[data-nadi-badge][data-dot='true'] {
   padding: 0;
   width: 8px;
   height: 8px;

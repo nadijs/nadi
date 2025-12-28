@@ -55,10 +55,10 @@
     "clean": "rm -rf dist"
   },
   "peerDependencies": {
-    "@nadi/core": "workspace:*"
+    "@nadi.js/core": "workspace:*"
   },
   "devDependencies": {
-    "@nadi/core": "workspace:*",
+    "@nadi.js/core": "workspace:*",
     "@nadi/forms": "workspace:*",
     "@nadi/router": "workspace:*",
     "@nadi/testing": "workspace:*",

@@ -21,10 +21,10 @@
   "author": "Nadi Team",
   "license": "MIT",
   "peerDependencies": {
-    "@nadi/core": "workspace:*"
+    "@nadi.js/core": "workspace:*"
   },
   "devDependencies": {
-    "@nadi/core": "workspace:*",
+    "@nadi.js/core": "workspace:*",
     "typescript": "^5.3.3",
     "tsup": "^8.0.0"
   }

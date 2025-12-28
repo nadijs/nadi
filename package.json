@@ -37,12 +37,12 @@
   },
   "size-limit": [
     {
-      "name": "@nadi/core",
+      "name": "@nadi.js/core",
       "path": "packages/core/dist/index.js",
       "limit": "3 KB"
     },
     {
-      "name": "@nadi/core/jsx-runtime",
+      "name": "@nadi.js/core/jsx-runtime",
       "path": "packages/core/dist/jsx-runtime.js",
       "limit": "2.5 KB"
     },

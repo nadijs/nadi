@@ -21,7 +21,7 @@ npm install @nadi/meta
 
 ```typescript
 import { Head, Title, Meta, Link } from '@nadi/meta';
-import { signal } from '@nadi/core';
+import { signal } from '@nadi.js/core';
 
 export default function Page() {
   const [pageTitle] = signal('My Page');
@@ -159,7 +159,7 @@ Sets the base URL for relative links.
 
 ```typescript
 import { Head, Title, Meta } from '@nadi/meta';
-import { signal, computed } from '@nadi/core';
+import { signal, computed } from '@nadi.js/core';
 
 export default function BlogPost(props) {
   const [post] = signal(props.post);
@@ -238,7 +238,7 @@ export default function Product(props) {
 
 ```typescript
 import { Head, Link } from '@nadi/meta';
-import { signal, effect } from '@nadi/core';
+import { signal, effect } from '@nadi.js/core';
 
 export default function App() {
   const [theme] = signal<'light' | 'dark'>('light');
@@ -330,7 +330,7 @@ export default function MultilingualPage(props) {
 ### Server-side
 
 ```typescript
-import { renderToString } from '@nadi/core';
+import { renderToString } from '@nadi.js/core';
 import { getMetaTags } from '@nadi/meta';
 import App from './App';
 
@@ -357,7 +357,7 @@ const fullHtml = `
 ### Client-side Hydration
 
 ```typescript
-import { hydrate } from '@nadi/core';
+import { hydrate } from '@nadi.js/core';
 import App from './App';
 
 hydrate(() => <App />, document.getElementById('app'));

@@ -3,7 +3,7 @@
  */
 
 import express from 'express';
-import { renderToString, renderToHtml } from '@nadi/core';
+import { renderToString, renderToHtml } from '@nadi.js/core';
 
 const app = express();
 app.use(express.json());

@@ -133,7 +133,7 @@ function convertVueScript(script: string, typescript?: boolean): string {
           })
           .filter(Boolean);
 
-        imports.push(`import { ${specifiers.join(', ')} } from '@nadi/core';`);
+        imports.push(`import { ${specifiers.join(', ')} } from '@nadi.js/core';`);
       } else {
         imports.push(generate(path.node).code);
       }
@@ -211,7 +211,7 @@ async function convertReactToNadi(content: string, options: MigrateOptions): Pro
           .filter(Boolean);
 
         if (specifiers.length > 0) {
-          imports.push(`import { ${specifiers.join(', ')} } from '@nadi/core';`);
+          imports.push(`import { ${specifiers.join(', ')} } from '@nadi.js/core';`);
         }
       } else {
         imports.push(generate(path.node).code);
@@ -288,7 +288,7 @@ async function convertSvelteToNadi(content: string, options: MigrateOptions): Pr
     .replace(/on:(\w+)={([^}]+)}/g, 'on$1={$2}');
 
   return `<script${options.typescript ? ' lang="ts"' : ''}>
-import { signal, computed, effect } from '@nadi/core';
+import { signal, computed, effect } from '@nadi.js/core';
 
 export default function Component() {
 ${convertedScript}

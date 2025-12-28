@@ -2,7 +2,7 @@
  * Next.js plugin for Nadi framework
  */
 
-import { compile } from '@nadi/compiler';
+import { compile } from '@nadi.js/compiler';
 import type { NextConfig } from 'next';
 
 export interface NadiNextOptions {

@@ -1,10 +1,10 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Textarea.tsx
  * @description Multi-line text input with auto-resize and character count
  */
 
-import { type JSX, type Accessor, signal, effect } from '@nadi/core';
+import { type JSX, type Accessor, signal, effect } from '@nadi.js/core';
 import type { Field } from '@nadi/forms';
 
 export interface TextareaProps {

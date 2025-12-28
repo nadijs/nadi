@@ -2,7 +2,7 @@
  * Base component - Sets base URL for relative links
  */
 
-import { onCleanup } from '@nadi/core';
+import { onCleanup } from '@nadi.js/core';
 import { addMetaTag, isServerEnvironment } from '../context';
 import type { BaseProps } from '../types';
 

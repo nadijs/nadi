@@ -100,6 +100,7 @@ git commit -m "docs: update getting started guide"
 ```
 
 **Commit types:**
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation changes
@@ -118,7 +119,7 @@ Then open a pull request on GitHub.
 
 ## Package Development
 
-### Working on @nadi/core
+### Working on @nadi.js/core
 
 ```bash
 cd packages/core
@@ -127,7 +128,7 @@ pnpm test    # Run tests
 pnpm build   # Build for production
 ```
 
-### Working on @nadi/compiler
+### Working on @nadi.js/compiler
 
 ```bash
 cd packages/compiler

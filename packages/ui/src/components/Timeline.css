@@ -1,4 +1,4 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * Timeline Component CSS
  */
@@ -46,17 +46,17 @@
   z-index: 1;
 }
 
-[data-nadi-timeline][data-variant="primary"] .nadi-timeline-dot {
+[data-nadi-timeline][data-variant='primary'] .nadi-timeline-dot {
   border-color: var(--nadi-color-primary-600);
   background: var(--nadi-color-primary-600);
 }
 
-[data-nadi-timeline][data-variant="success"] .nadi-timeline-dot {
+[data-nadi-timeline][data-variant='success'] .nadi-timeline-dot {
   border-color: var(--nadi-color-success);
   background: var(--nadi-color-success);
 }
 
-[data-nadi-timeline][data-variant="error"] .nadi-timeline-dot {
+[data-nadi-timeline][data-variant='error'] .nadi-timeline-dot {
   border-color: var(--nadi-color-error);
   background: var(--nadi-color-error);
 }

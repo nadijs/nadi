@@ -1,10 +1,10 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Pagination.tsx
  * @description Pagination component for navigating pages
  */
 
-import { type JSX, For, type Accessor } from '@nadi/core';
+import { type JSX, For, type Accessor } from '@nadi.js/core';
 
 export interface PaginationProps {
   total: number;

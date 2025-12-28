@@ -3,7 +3,7 @@
  */
 
 import { defineNuxtModule, addVitePlugin } from '@nuxt/kit';
-import { compile } from '@nadi/compiler';
+import { compile } from '@nadi.js/compiler';
 import type { Plugin } from 'vite';
 
 export interface ModuleOptions {
@@ -32,19 +32,19 @@ export default defineNuxtModule<ModuleOptions>({
       ...nuxt.options.imports,
       imports: [
         {
-          from: '@nadi/core',
+          from: '@nadi.js/core',
           name: 'signal',
         },
         {
-          from: '@nadi/core',
+          from: '@nadi.js/core',
           name: 'computed',
         },
         {
-          from: '@nadi/core',
+          from: '@nadi.js/core',
           name: 'effect',
         },
         {
-          from: '@nadi/core',
+          from: '@nadi.js/core',
           name: 'batch',
         },
       ],

@@ -1,5 +1,5 @@
-import { renderToStaticMarkup, renderToString } from '@nadi/core';
-import { compile } from '@nadi/compiler';
+import { renderToStaticMarkup, renderToString } from '@nadi.js/core';
+import { compile } from '@nadi.js/compiler';
 import { build as viteBuild, type ViteDevServer } from 'vite';
 import fs from 'fs/promises';
 import path from 'path';
@@ -220,7 +220,7 @@ function generateHydrationScript(interactive: string[], config: PrerenderConfig)
 
   if (config.hydration === 'islands') {
     return `<script type="module">
-import { hydrate } from '/@nadi/core';
+import { hydrate } from '/@nadi.js/core';
 
 // Load hydration manifest
 const manifest = await fetch('/_hydration-manifest.json').then(r => r.json());
@@ -244,7 +244,7 @@ if (config) {
 
   // Full hydration
   return `<script type="module">
-import { hydrate } from '/@nadi/core';
+import { hydrate } from '/@nadi.js/core';
 hydrate(document.getElementById('app'));
 </script>`;
 }

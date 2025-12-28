@@ -1,4 +1,4 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * Steps Component CSS
  */
@@ -10,7 +10,7 @@
   margin: 0;
 }
 
-[data-nadi-steps][data-direction="vertical"] {
+[data-nadi-steps][data-direction='vertical'] {
   flex-direction: column;
 }
 
@@ -22,7 +22,7 @@
   gap: var(--nadi-space-3);
 }
 
-[data-nadi-steps][data-direction="vertical"] .nadi-step {
+[data-nadi-steps][data-direction='vertical'] .nadi-step {
   padding-bottom: var(--nadi-space-6);
 }
 
@@ -41,18 +41,18 @@
   flex-shrink: 0;
 }
 
-.nadi-step[data-status="completed"] .nadi-step-indicator {
+.nadi-step[data-status='completed'] .nadi-step-indicator {
   background: var(--nadi-color-primary-600);
   color: white;
 }
 
-.nadi-step[data-status="active"] .nadi-step-indicator {
+.nadi-step[data-status='active'] .nadi-step-indicator {
   background: var(--nadi-color-primary-100);
   color: var(--nadi-color-primary-700);
   border: 2px solid var(--nadi-color-primary-600);
 }
 
-.nadi-step[data-status="error"] .nadi-step-indicator {
+.nadi-step[data-status='error'] .nadi-step-indicator {
   background: var(--nadi-color-error);
   color: white;
 }
@@ -79,21 +79,21 @@
   transition: background var(--nadi-duration-normal);
 }
 
-[data-nadi-steps][data-direction="horizontal"] .nadi-step-connector {
+[data-nadi-steps][data-direction='horizontal'] .nadi-step-connector {
   left: 50%;
   right: -50%;
   top: 16px;
   height: 2px;
 }
 
-[data-nadi-steps][data-direction="vertical"] .nadi-step-connector {
+[data-nadi-steps][data-direction='vertical'] .nadi-step-connector {
   left: 16px;
   top: 32px;
   bottom: 0;
   width: 2px;
 }
 
-.nadi-step[data-status="completed"] .nadi-step-connector {
+.nadi-step[data-status='completed'] .nadi-step-connector {
   background: var(--nadi-color-primary-600);
 }
 

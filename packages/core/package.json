@@ -1,5 +1,5 @@
 {
-  "name": "@nadi/core",
+  "name": "@nadi.js/core",
   "version": "0.2.0-alpha.1",
   "description": "Nadi core signals runtime with SSR support",
   "type": "module",

@@ -24,7 +24,7 @@
  * ```
  */
 
-import { signal, effect, onCleanup, type Accessor } from '@nadi/core';
+import { signal, effect, onCleanup, type Accessor } from '@nadi.js/core';
 
 export interface GestureConfig {
   /**

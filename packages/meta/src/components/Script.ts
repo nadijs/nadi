@@ -2,7 +2,7 @@
  * Script component - Adds script tags to document head
  */
 
-import { onCleanup } from '@nadi/core';
+import { onCleanup } from '@nadi.js/core';
 import { addMetaTag, isServerEnvironment } from '../context';
 import type { ScriptProps } from '../types';
 

@@ -20,13 +20,13 @@
   "author": "Nadi Team",
   "license": "MIT",
   "peerDependencies": {
-    "@nadi/core": "workspace:*",
-    "@nadi/compiler": "workspace:*",
+    "@nadi.js/core": "workspace:*",
+    "@nadi.js/compiler": "workspace:*",
     "nuxt": "^3.0.0"
   },
   "devDependencies": {
-    "@nadi/core": "workspace:*",
-    "@nadi/compiler": "workspace:*",
+    "@nadi.js/core": "workspace:*",
+    "@nadi.js/compiler": "workspace:*",
     "@nuxt/kit": "^3.9.0",
     "@nuxt/schema": "^3.9.0",
     "nuxt": "^3.9.0",

@@ -2,7 +2,7 @@
  * Head component - Container for meta tags
  */
 
-import { onCleanup } from '@nadi/core';
+import { onCleanup } from '@nadi.js/core';
 
 export interface HeadProps {
   children?: any;

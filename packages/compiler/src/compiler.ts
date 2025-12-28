@@ -104,7 +104,7 @@ function generateComponent(parts: {
   scopeId: string;
 }): string {
   return `
-import { jsx, Fragment } from '@nadi/core/jsx-runtime';
+import { jsx, Fragment } from '@nadi.js/core/jsx-runtime';
 
 ${parts.script}
 

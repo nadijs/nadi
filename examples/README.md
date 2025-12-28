@@ -5,14 +5,18 @@ This directory contains example `.nadi` components demonstrating framework featu
 ## Examples
 
 ### Counter.nadi
+
 A simple counter demonstrating:
+
 - Signal-based state management
 - Computed values
 - Event handlers
 - Scoped CSS
 
 ### TodoApp.nadi
+
 A todo list application demonstrating:
+
 - List rendering with `<For>`
 - Form handling
 - Array state updates
@@ -35,7 +39,7 @@ npm test
 Or use the compiler directly:
 
 ```typescript
-import { compile } from '@nadi/compiler';
+import { compile } from '@nadi.js/compiler';
 import { readFileSync } from 'fs';
 
 const source = readFileSync('./examples/Counter.nadi', 'utf-8');

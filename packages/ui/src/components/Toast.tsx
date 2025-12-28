@@ -1,12 +1,12 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Toast.ts
  * @description Toast notification system with automatic stacking and dismissal
- * 
+ *
  * @example
  * ```tsx
  * import { showToast, ToastContainer } from '@nadi/ui';
- * 
+ *
  * // In your app root
  * function App() {
  *   return (
@@ -16,7 +16,7 @@
  *     </>
  *   );
  * }
- * 
+ *
  * // Anywhere in your app
  * showToast({
  *   title: 'Success!',
@@ -24,13 +24,13 @@
  *   variant: 'success',
  *   duration: 3000,
  * });
- * 
+ *
  * // Or simple version
  * showToast({ message: 'Hello!' });
  * ```
  */
 
-import { signal, For, type JSX } from '@nadi/core';
+import { signal, For, type JSX } from '@nadi.js/core';
 
 export interface ToastOptions {
   /**
@@ -38,23 +38,23 @@ export interface ToastOptions {
    * @default 'info'
    */
   variant?: 'success' | 'error' | 'warning' | 'info';
-  
+
   /**
    * Toast title (optional)
    */
   title?: string;
-  
+
   /**
    * Toast message (required)
    */
   message: string;
-  
+
   /**
    * Auto-dismiss duration in ms (0 for persistent)
    * @default 5000
    */
   duration?: number;
-  
+
   /**
    * Show close button
    * @default true
@@ -67,12 +67,12 @@ interface Toast extends ToastOptions {
   closing: boolean;
 }
 
-export type ToastPosition = 
-  | 'top-left' 
-  | 'top-center' 
-  | 'top-right' 
-  | 'bottom-left' 
-  | 'bottom-center' 
+export type ToastPosition =
+  | 'top-left'
+  | 'top-center'
+  | 'top-right'
+  | 'bottom-left'
+  | 'bottom-center'
   | 'bottom-right';
 
 // Global toast state
@@ -81,19 +81,19 @@ let toastIdCounter = 0;
 
 /**
  * Show a toast notification.
- * 
+ *
  * **Why this is amazing:**
  * - React: Need Context provider, useState, complex state management
  * - Vue: Need plugin registration, store, or provide/inject
  * - Nadi: Just import and call! Global signal handles everything
- * 
+ *
  * No context wrapping needed. Just drop <ToastContainer /> anywhere
  * and call showToast() from any component.
  */
 export function showToast(options: ToastOptions): string {
   const id = `toast-${toastIdCounter++}`;
   const duration = options.duration ?? 5000;
-  
+
   const toast: Toast = {
     id,
     variant: options.variant || 'info',
@@ -103,16 +103,16 @@ export function showToast(options: ToastOptions): string {
     closable: options.closable !== false,
     closing: false,
   };
-  
+
   setToasts([...toasts(), toast]);
-  
+
   // Auto-dismiss after duration
   if (duration > 0) {
     setTimeout(() => {
       dismissToast(id);
     }, duration);
   }
-  
+
   return id;
 }
 
@@ -121,10 +121,10 @@ export function showToast(options: ToastOptions): string {
  */
 export function dismissToast(id: string): void {
   // Mark as closing for animation
-  setToasts(toasts().map(t => 
+  setToasts(toasts().map(t =>
     t.id === id ? { ...t, closing: true } : t
   ));
-  
+
   // Remove after animation
   setTimeout(() => {
     setToasts(toasts().filter(t => t.id !== id));
@@ -146,7 +146,7 @@ export function ToastContainer(props: {
   position?: ToastPosition;
 }): JSX.Element {
   const position = props.position || 'top-right';
-  
+
   return (
     <div
       data-nadi-component="toast-container"
@@ -172,7 +172,7 @@ export function ToastContainer(props: {
               {toast.variant === 'warning' && <WarningIcon />}
               {toast.variant === 'info' && <InfoIcon />}
             </div>
-            
+
             {/* Content */}
             <div class="nadi-toast-content">
               {toast.title && (
@@ -180,7 +180,7 @@ export function ToastContainer(props: {
               )}
               <div class="nadi-toast-message">{toast.message}</div>
             </div>
-            
+
             {/* Close button */}
             {toast.closable && (
               <button

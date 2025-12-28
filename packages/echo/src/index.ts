@@ -2,7 +2,7 @@
  * @nadi/echo - Laravel Echo integration for Nadi
  */
 
-import { signal, batch, onCleanup } from '@nadi/core';
+import { signal, batch, onCleanup } from '@nadi.js/core';
 import type Echo from 'laravel-echo';
 
 export interface NadiEcho {

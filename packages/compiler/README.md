@@ -1,4 +1,4 @@
-# @nadi/compiler
+# @nadi.js/compiler
 
 > Single-file component compiler for Nadi framework
 
@@ -13,7 +13,7 @@
 ## Installation
 
 ```bash
-npm install @nadi/compiler
+npm install @nadi.js/compiler
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ npm install @nadi/compiler
 ### Basic Compilation
 
 ```typescript
-import { compile } from '@nadi/compiler';
+import { compile } from '@nadi.js/compiler';
 
 const source = `
 <template>
@@ -58,7 +58,7 @@ console.log(result.code);
 ### Parse Only
 
 ```typescript
-import { parse } from '@nadi/compiler';
+import { parse } from '@nadi.js/compiler';
 
 const descriptor = parse(source, 'Hello.nadi');
 

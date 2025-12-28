@@ -58,11 +58,11 @@ const [count, setCount] = signal(0);
 ## 📦 Installation
 
 ```bash
-pnpm add @nadi/ui @nadi/core
+pnpm add @nadi/ui @nadi.js/core
 # or
-npm install @nadi/ui @nadi/core
+npm install @nadi/ui @nadi.js/core
 # or
-yarn add @nadi/ui @nadi/core
+yarn add @nadi/ui @nadi.js/core
 ```
 
 ## 🎨 Quick Start
@@ -70,7 +70,7 @@ yarn add @nadi/ui @nadi/core
 ```tsx
 import { Button, Input, Grid, showToast, ThemeProvider } from '@nadi/ui';
 import '@nadi/ui/styles.css';
-import { signal } from '@nadi/core';
+import { signal } from '@nadi.js/core';
 
 function App() {
   // Setup theme (dark/light mode)

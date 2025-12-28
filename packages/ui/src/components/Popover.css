@@ -1,4 +1,4 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * Popover Component CSS
  */
@@ -20,25 +20,25 @@
   animation: nadi-fade-in var(--nadi-duration-fast) var(--nadi-easing-standard);
 }
 
-.nadi-popover-content[data-placement="top"] {
+.nadi-popover-content[data-placement='top'] {
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(-8px);
 }
 
-.nadi-popover-content[data-placement="bottom"] {
+.nadi-popover-content[data-placement='bottom'] {
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(8px);
 }
 
-.nadi-popover-content[data-placement="left"] {
+.nadi-popover-content[data-placement='left'] {
   right: 100%;
   top: 50%;
   transform: translateY(-50%) translateX(-8px);
 }
 
-.nadi-popover-content[data-placement="right"] {
+.nadi-popover-content[data-placement='right'] {
   left: 100%;
   top: 50%;
   transform: translateY(-50%) translateX(8px);
@@ -53,7 +53,7 @@
   transform: rotate(45deg);
 }
 
-.nadi-popover-content[data-placement="top"] .nadi-popover-arrow {
+.nadi-popover-content[data-placement='top'] .nadi-popover-arrow {
   bottom: -5px;
   left: 50%;
   transform: translateX(-50%) rotate(45deg);
@@ -61,7 +61,7 @@
   border-left: none;
 }
 
-.nadi-popover-content[data-placement="bottom"] .nadi-popover-arrow {
+.nadi-popover-content[data-placement='bottom'] .nadi-popover-arrow {
   top: -5px;
   left: 50%;
   transform: translateX(-50%) rotate(45deg);
@@ -69,7 +69,7 @@
   border-right: none;
 }
 
-.nadi-popover-content[data-placement="left"] .nadi-popover-arrow {
+.nadi-popover-content[data-placement='left'] .nadi-popover-arrow {
   right: -5px;
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
@@ -77,7 +77,7 @@
   border-bottom: none;
 }
 
-.nadi-popover-content[data-placement="right"] .nadi-popover-arrow {
+.nadi-popover-content[data-placement='right'] .nadi-popover-arrow {
   left: -5px;
   top: 50%;
   transform: translateY(-50%) rotate(45deg);

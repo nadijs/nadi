@@ -1,4 +1,4 @@
-import { render } from '@nadi/core';
+import { render } from '@nadi.js/core';
 import App from './App';
 import './style.css';
 

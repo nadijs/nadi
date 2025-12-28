@@ -1,24 +1,24 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Grid.ts
  * @description Responsive grid layout component with signal-based reactivity
- * 
+ *
  * @example
  * ```tsx
  * import { Grid } from '@nadi/ui';
- * 
+ *
  * // Simple 3-column grid
  * <Grid cols={3} gap="md">
  *   <div>Item 1</div>
  *   <div>Item 2</div>
  *   <div>Item 3</div>
  * </Grid>
- * 
+ *
  * // Responsive grid: 1 col mobile, 2 tablet, 4 desktop
  * <Grid cols={1} colsSm={2} colsMd={4} gap="lg">
  *   {items().map(item => <Card>{item}</Card>)}
  * </Grid>
- * 
+ *
  * // With reactive columns
  * const [columns, setColumns] = signal(3);
  * <Grid cols={columns()}>
@@ -27,7 +27,7 @@
  * ```
  */
 
-import { type JSX, type Accessor } from '@nadi/core';
+import { type JSX, type Accessor } from '@nadi.js/core';
 
 export interface GridProps {
   /**
@@ -35,48 +35,48 @@ export interface GridProps {
    * Can be a number or reactive signal
    */
   cols?: number | Accessor<number>;
-  
+
   /**
    * Columns for small screens (≥640px)
    */
   colsSm?: number;
-  
+
   /**
    * Columns for medium screens (≥768px)
    */
   colsMd?: number;
-  
+
   /**
    * Columns for large screens (≥1024px)
    */
   colsLg?: number;
-  
+
   /**
    * Columns for extra large screens (≥1280px)
    */
   colsXl?: number;
-  
+
   /**
    * Gap between grid items
    * @default 'md'
    */
   gap?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | Accessor<string>;
-  
+
   /**
    * Additional CSS classes
    */
   class?: string;
-  
+
   /**
    * Inline styles
    */
   style?: JSX.CSSProperties | string;
-  
+
   /**
    * Grid items
    */
   children?: JSX.Element;
-  
+
   /**
    * Custom data attributes
    */
@@ -85,17 +85,17 @@ export interface GridProps {
 
 /**
  * Responsive Grid Layout Component
- * 
+ *
  * **Why this beats React/Vue grids:**
  * - React: Need useState + useMemo for responsive columns, causes re-renders
  * - Vue: Need computed() + watch() for reactivity, template-heavy
  * - Nadi: Pass signals directly, automatic reactivity with zero overhead
- * 
+ *
  * Uses CSS Grid with data attributes for performance. No JavaScript
  * calculations for layout - pure CSS with signal-driven updates.
  */
 export function Grid(props: GridProps): JSX.Element {
-  const resolveValue = (value: any) => 
+  const resolveValue = (value: any) =>
     typeof value === 'function' ? value() : value;
 
   const cols = () => resolveValue(props.cols) || 1;

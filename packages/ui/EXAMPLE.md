@@ -7,7 +7,7 @@ Simple example demonstrating the @nadi/ui component library.
 ```tsx
 import { Button, Input, Grid, Card, showToast, ToastContainer } from '@nadi/ui';
 import '@nadi/ui/styles.css';
-import { signal } from '@nadi/core';
+import { signal } from '@nadi.js/core';
 
 function App() {
   const [name, setName] = signal('');

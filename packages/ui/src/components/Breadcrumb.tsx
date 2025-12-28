@@ -1,10 +1,10 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Breadcrumb.tsx
  * @description Navigation breadcrumb component
  */
 
-import { type JSX, For } from '@nadi/core';
+import { type JSX, For } from '@nadi.js/core';
 
 export interface BreadcrumbItem {
   label: string;

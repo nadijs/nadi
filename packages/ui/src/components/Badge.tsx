@@ -1,10 +1,10 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Badge.tsx
  * @description Status badge component
  */
 
-import { type JSX } from '@nadi/core';
+import { type JSX } from '@nadi.js/core';
 
 export interface BadgeProps {
   variant?: 'primary' | 'success' | 'error' | 'warning' | 'info' | 'neutral';

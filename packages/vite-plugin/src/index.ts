@@ -2,7 +2,7 @@
  * Vite plugin for Nadi framework
  */
 
-import { compile } from '@nadi/compiler';
+import { compile } from '@nadi.js/compiler';
 import type { Plugin } from 'vite';
 
 export interface NadiPluginOptions {

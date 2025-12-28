@@ -13,7 +13,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "jsxImportSource": "@nadi/core",
+    "jsxImportSource": "@nadi.js/core",
 
     /* Linting */
     "strict": true,

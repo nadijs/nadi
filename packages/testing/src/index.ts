@@ -2,7 +2,7 @@
  * @nadi/testing - Testing utilities for Nadi framework
  */
 
-import { createRoot, batch } from '@nadi/core';
+import { createRoot, batch } from '@nadi.js/core';
 import { fireEvent as domFireEvent, getQueriesForElement } from '@testing-library/dom';
 
 export interface RenderResult {

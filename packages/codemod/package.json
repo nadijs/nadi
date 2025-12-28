@@ -51,7 +51,7 @@
     "vitest": "^1.1.0"
   },
   "peerDependencies": {
-    "@nadi/compiler": "^0.2.0"
+    "@nadi.js/compiler": "^0.2.0"
   },
   "author": "Nadi Team",
   "license": "MIT",

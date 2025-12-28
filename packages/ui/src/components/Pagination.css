@@ -1,4 +1,4 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * Pagination Component CSS
  */
@@ -39,7 +39,7 @@
   color: var(--nadi-color-primary-600);
 }
 
-.nadi-pagination-button[data-active="true"] {
+.nadi-pagination-button[data-active='true'] {
   background: var(--nadi-color-primary-600);
   border-color: var(--nadi-color-primary-600);
   color: white;

@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@nadi/core": "^0.1.0"
+    "@nadi.js/core": "^0.1.0"
   },
   "devDependencies": {
     "typescript": "^5.3.3",

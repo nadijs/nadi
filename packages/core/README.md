@@ -1,4 +1,4 @@
-# @nadi/core
+# @nadi.js/core
 
 > Core signals runtime for the Nadi framework
 
@@ -13,7 +13,7 @@
 ## 📦 Installation
 
 ```bash
-npm install @nadi/core
+npm install @nadi.js/core
 ```
 
 ## 🎯 Quick Start
@@ -21,7 +21,7 @@ npm install @nadi/core
 ### Creating Signals
 
 ```typescript
-import { signal } from '@nadi/core';
+import { signal } from '@nadi.js/core';
 
 const count = signal(0);
 
@@ -36,7 +36,7 @@ console.log(count()); // 5
 ### Computed Values
 
 ```typescript
-import { signal, computed } from '@nadi/core';
+import { signal, computed } from '@nadi.js/core';
 
 const count = signal(2);
 const doubled = computed(() => count() * 2);
@@ -50,7 +50,7 @@ console.log(doubled()); // 6
 ### Effects (Side Effects)
 
 ```typescript
-import { signal, effect } from '@nadi/core';
+import { signal, effect } from '@nadi.js/core';
 
 const count = signal(0);
 
@@ -66,7 +66,7 @@ count(5);
 ### Batching Updates
 
 ```typescript
-import { signal, batch } from '@nadi/core';
+import { signal, batch } from '@nadi.js/core';
 
 const a = signal(1);
 const b = signal(2);
@@ -86,7 +86,7 @@ batch(() => {
 ### Lifecycle Hooks
 
 ```typescript
-import { onMount, onCleanup } from '@nadi/core';
+import { onMount, onCleanup } from '@nadi.js/core';
 
 function MyComponent() {
   onMount(() => {
@@ -102,7 +102,7 @@ function MyComponent() {
 ### Context API
 
 ```typescript
-import { createContext, useContext } from '@nadi/core';
+import { createContext, useContext } from '@nadi.js/core';
 
 const ThemeContext = createContext('light');
 
@@ -124,6 +124,7 @@ function Child() {
 Creates a reactive signal.
 
 **Options:**
+
 - `equals`: Custom equality function or `false` to disable equality check
 
 **Returns:** Signal getter/setter function

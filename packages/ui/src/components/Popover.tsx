@@ -1,10 +1,10 @@
-/** @jsxImportSource @nadi/core */
+/** @jsxImportSource @nadi.js/core */
 /**
  * @file Popover.tsx
  * @description Popover component for contextual information
  */
 
-import { type JSX, signal, effect, onCleanup } from '@nadi/core';
+import { type JSX, signal, effect, onCleanup } from '@nadi.js/core';
 
 export interface PopoverProps {
   trigger: JSX.Element;

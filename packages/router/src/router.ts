@@ -1,4 +1,4 @@
-import { signal } from '@nadi/core';
+import { signal } from '@nadi.js/core';
 import type {
   RouterConfig,
   RouteDefinition,

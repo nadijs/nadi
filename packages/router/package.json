@@ -1,5 +1,5 @@
 {
-  "name": "@nadi/router",
+  "name": "@nadi.js/router",
   "version": "0.1.0-alpha.1",
   "description": "Lightweight client-side router for Nadi",
   "type": "module",
@@ -39,7 +39,7 @@
   "homepage": "https://nadijs.org",
   "bugs": "https://github.com/nadijs/nadi/issues",
   "dependencies": {
-    "@nadi/core": "workspace:*"
+    "@nadi.js/core": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.10.6",
@@ -48,6 +48,6 @@
     "vitest": "^1.1.1"
   },
   "peerDependencies": {
-    "@nadi/core": "^0.1.0"
+    "@nadi.js/core": "^0.1.0"
   }
 }

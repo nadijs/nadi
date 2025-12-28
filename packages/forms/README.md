@@ -274,10 +274,10 @@ const removeTag = (index: number) => {
 };
 ```
 
-### Integration with @nadi/core
+### Integration with @nadi.js/core
 
 ```typescript
-import { signal, computed, effect } from '@nadi/core';
+import { signal, computed, effect } from '@nadi.js/core';
 import { createForm } from '@nadi/forms';
 
 export default function LoginForm() {
